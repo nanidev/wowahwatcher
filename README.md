@@ -8,6 +8,7 @@
 [![Version](https://img.shields.io/github/v/release/nanidev/wowahwatcher?style=for-the-badge&color=f0bd57&labelColor=0a0e14&label=version)](https://github.com/nanidev/wowahwatcher/releases/latest)
 [![Windows](https://img.shields.io/badge/Windows-10%20%7C%2011-7db6ff?style=for-the-badge&labelColor=0a0e14&logo=windows&logoColor=white)](#requirements)
 [![Support on Ko-fi](https://img.shields.io/badge/Support%20on-Ko--fi-ff5e5b?style=for-the-badge&labelColor=0a0e14&logo=ko-fi&logoColor=white)](https://ko-fi.com/nanidev)
+[![Website](https://img.shields.io/badge/Website-nanidev.github.io%2Fwowahwatcher-7db6ff?style=for-the-badge&labelColor=0a0e14)](https://nanidev.github.io/wowahwatcher/)
 
 **Free for personal use &nbsp;·&nbsp; 100% local &nbsp;·&nbsp; No accounts &nbsp;·&nbsp; No telemetry**
 
@@ -114,7 +115,7 @@ After each scan you get a short, readable briefing: what to buy now, why, and wh
 
 ## Get started in a few minutes
 
-1. **[Download the latest release](https://github.com/nanidev/wowahwatcher/releases/latest)** and run `WoWAHWatcher-Setup-<version>.exe`. (Prefer no installer? Download the `.zip`, unzip it anywhere and run `wowmarkethelper.exe`.)
+1. **[Download the latest release](https://github.com/nanidev/wowahwatcher/releases/latest)** and run `WoWAHWatcher-Setup-<version>.exe`. (Prefer no installer? Download the `.zip`, unzip it anywhere and run `WoWAHWatcher.exe`.)
 2. The dashboard **opens in your browser** by itself. Click **Set up your WoW account** and follow the guided setup.
 3. In game: open the Auction House and let Auctionator scan, open your profession windows once, then log out or type `/reload`. The app notices within seconds and fills in.
 

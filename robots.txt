@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nanidev.github.io/wowahwatcher/sitemap.xml
