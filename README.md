@@ -32,7 +32,7 @@ It runs quietly on your own PC, opens in your browser, and stays out of the game
 ## What it does for you
 
 ### Finds the real bargains
-Every item from your latest scan gets a signal: **BUY**, **SELL-HOLD** or **WATCH**. A BUY means the price is low compared with what the item usually sells for, *and* there is enough history and enough listings to trust it. Thin, stale or volatile items are tagged so a one-listing fluke never shows up as a "deal".
+Every item from your latest scan gets a signal: **BUY**, **SELL-HOLD** or **WATCH**. A BUY means the price is well below what the item usually sells for, it still makes a profit after the Auction House cut, and there is enough history and supply to trust it. Items that are **Thin** (too few listings), **Stale** (old data), **Volatile** (prices swing too much) or **Falling** (the last few days sit well below the days before) are never marked BUY, so a one-listing fluke or a price that is still dropping never shows up as a "deal".
 
 <div align="center">
 <img src="assets/screens/market.png" alt="The Market page with presets, filters, saved views and signal chips" width="92%">
@@ -40,7 +40,7 @@ Every item from your latest scan gets a signal: **BUY**, **SELL-HOLD** or **WATC
 </div>
 
 ### Shows the true profit of every craft
-Crafting is costed from the recipes **your characters actually know**. Every material is priced at the cheaper of its Auction House price and its vendor price, the 5% Auction House cut is taken off, and you see the net profit and margin. If a price is missing, the craft says **"price unknown"**. It never invents a total.
+Crafting is costed from the recipes **your characters actually know**. Every material is priced at the cheaper of its Auction House price and its vendor price, the 5% Auction House cut is taken off, and you see the net profit and margin. If a price is missing, the craft says **"price unknown"**. It never invents a total. Search by name, or press **Show all**, to find any priced craft, not just the top few.
 
 <div align="center">
 <img src="assets/screens/crafting.png" alt="The Crafting page showing ingredients, craft cost, net profit and margin" width="92%">
@@ -64,7 +64,7 @@ A live **Alerts** feed announces each new BUY deal once, with a badge in the sid
 </div>
 
 ### Explains every price
-Notable days in the history are listed under the chart.
+Each item page charts its price history and lists the notable days. Every figure has a plain definition: the **Typical range** is the middle 80% of daily prices, so one spike cannot distort it; **Cheaper than** is the share of days in the window that were dearer than today's price; and the **sell target** stays close to the item's usual daily low, never more than 25% above it. The same definitions are in the app's Help.
 
 <div align="center">
 <img src="assets/screens/item.png" alt="An item page with price history chart and the reason for its signal" width="92%">
@@ -72,7 +72,7 @@ Notable days in the history are listed under the chart.
 </div>
 
 ### Writes you a briefing
-After each scan you get a short, readable briefing: what to buy now, why, and what to watch. It is built by fixed rules from your data, so it always works. If you run [Ollama](https://ollama.com) on your PC, a local AI can rewrite it as a flowing summary, and you can add your own notes ("more players reached this skill since launch, so supply is growing") that the AI weighs against the numbers. The AI runs **on your machine**, so your data stays yours.
+After each scan you get a short, readable briefing: what to buy now, why, and what to watch. It is built by fixed rules from your data, so it always works. If you run [Ollama](https://ollama.com) on your PC, a local AI can rewrite it as a flowing summary, and you can add your own notes ("more players reached this skill since launch, so supply is growing") that the AI weighs against the numbers. Every figure the AI quotes is checked against your data first; a summary that does not match is discarded, the verified briefing is shown, and the page says why. The AI runs **on your machine**, so your data stays yours.
 
 <div align="center">
 <img src="assets/screens/briefing.png" alt="The Briefing page with your notes for the AI and the latest briefing" width="92%">

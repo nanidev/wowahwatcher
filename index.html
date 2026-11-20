@@ -45,7 +45,7 @@
       "description": "A free, local Windows app that reads your Auctionator scans and shows BUY, SELL-HOLD and WATCH signals, true crafting profit, a shopping list and deal alerts for the World of Warcraft Auction House.",
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "Windows 10, Windows 11",
-      "softwareVersion": "1.0.1",
+      "softwareVersion": "1.0.2",
       "url": "https://wowahwatcher.com/",
       "downloadUrl": "https://github.com/nanidev/wowahwatcher/releases/latest",
       "image": "https://wowahwatcher.com/assets/site/og-image.jpg",
@@ -85,6 +85,8 @@
         { "@type": "Question", "name": "Which World of Warcraft versions work?", "acceptedAnswer": { "@type": "Answer", "text": "The app looks for the retail, classic and forever game folders. If your install is somewhere unusual, you can choose the WoW folder yourself in Settings." } },
         { "@type": "Question", "name": "Does it run on Mac or Linux?", "acceptedAnswer": { "@type": "Answer", "text": "Not at the moment. WoW AH Watcher is a Windows 10 and Windows 11 (64-bit) app." } },
         { "@type": "Question", "name": "Windows says \"Windows protected your PC\". Is that normal?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The first builds are not code-signed yet, so Windows SmartScreen may warn you. Click More info, then Run anyway. Every download ships with a .sha256 file so you can verify it is untouched." } },
+        { "@type": "Question", "name": "Why is a cheap-looking item not marked BUY?", "acceptedAnswer": { "@type": "Answer", "text": "A BUY needs a price well below what the item usually sells for, a profit after the 5% Auction House cut, enough history and enough supply. Items that are Thin, Stale, Volatile or Falling are never marked BUY, even when they look cheap. The item page gives the reason." } },
+        { "@type": "Question", "name": "Can the AI make up numbers?", "acceptedAnswer": { "@type": "Answer", "text": "Every figure in an AI summary is compared with the data the app calculated. If a price or item does not match, the summary is discarded, the verified briefing is shown, and the page explains what did not match." } },
         { "@type": "Question", "name": "How up to date are the prices?", "acceptedAnswer": { "@type": "Answer", "text": "The app only knows your last Auctionator scan, so it labels data as fresh, aging, stale or very old and never presents stale prices as a deal. Scan in game and the app updates within seconds." } }
       ]
     }
@@ -218,11 +220,11 @@
         <article class="card span4 reveal">
           <span class="tag">Signals</span>
           <h3>Finds the real bargains</h3>
-          <p>Every scanned item gets one signal, based only on your own history. A BUY needs a price well below the fair price, enough history and enough listings. One-listing flukes are tagged Thin and never shown as deals.</p>
+          <p>Every scanned item gets one signal, based only on your own history. A BUY needs a price well below what the item usually sells for, a profit after the Auction House cut, enough history and enough supply. Thin, Stale, Volatile and Falling items are never shown as BUY, so one-listing flukes and still-falling prices never pass as deals.</p>
           <div class="demo chips">
             <div class="sig buy" style="--i:0"><b>BUY</b><span>Well below the fair price, and still a profit after the Auction House cut.</span></div>
             <div class="sig hold" style="--i:1"><b>SELL-HOLD</b><span>Already near or above the fair price. Hold stock instead of buying more.</span></div>
-            <div class="sig watch" style="--i:2"><b>WATCH</b><span>Nothing stands out yet, or it is Thin, Stale or Volatile and not worth the risk.</span></div>
+            <div class="sig watch" style="--i:2"><b>WATCH</b><span>Nothing stands out yet, or the item is Thin, Stale, Volatile or Falling and not safe to buy.</span></div>
           </div>
         </article>
 
@@ -276,10 +278,10 @@
         <article class="card span3 reveal">
           <span class="tag">Briefing</span>
           <h3>A written briefing after every scan</h3>
-          <p>Built by fixed rules, so it always works. Run Ollama locally and an AI can turn it into a flowing summary, weighing your own notes against the numbers. It all stays on your machine.</p>
+          <p>Built by fixed rules, so it always works. Run Ollama locally and an AI can turn it into a flowing summary, weighing your own notes against the numbers. Every figure an AI summary quotes is checked against your data first, and a mismatch is discarded with the reason shown. It all stays on your machine.</p>
           <div class="demo">
             <div class="type-label"><i></i>Local briefing</div>
-            <div class="type" id="typer" data-text="Today looks good for cloth. Three items are well below their fair price with plenty of listings, so they are worth buying now. Your best craft still pays after the Auction House cut. Two flasks are Thin, so I would watch them rather than buy."></div>
+            <div class="type" id="typer" data-text="Today looks good for cloth. Three items are well below their fair price with plenty of supply, so they are worth buying now. Your best craft still pays after the Auction House cut. Two flasks are Thin, so I would watch them rather than buy."></div>
           </div>
         </article>
 
@@ -367,6 +369,8 @@
         <details class="reveal"><summary>Which World of Warcraft versions work?</summary><div class="ans">The app looks for the retail, classic and forever game folders. If your install is somewhere unusual, you can choose the WoW folder yourself in Settings.</div></details>
         <details class="reveal"><summary>Does it run on Mac or Linux?</summary><div class="ans">Not at the moment. WoW AH Watcher is a Windows 10 and Windows 11 (64-bit) app.</div></details>
         <details class="reveal"><summary>Windows says &ldquo;Windows protected your PC&rdquo;. Is that normal?</summary><div class="ans">Yes. The first builds are not code-signed yet, so Windows SmartScreen may warn you. Click <b>More info</b>, then <b>Run anyway</b>. Every download ships with a <code>.sha256</code> file so you can verify it is untouched.</div></details>
+        <details class="reveal"><summary>Why is a cheap-looking item not marked BUY?</summary><div class="ans">A BUY needs a price well below what the item usually sells for, a profit after the 5% Auction House cut, enough history and enough supply. Items that are Thin, Stale, Volatile or Falling are never marked BUY, even when they look cheap. The item page gives the reason.</div></details>
+        <details class="reveal"><summary>Can the AI make up numbers?</summary><div class="ans">Every figure in an AI summary is compared with the data the app calculated. If a price or item does not match, the summary is discarded, the verified briefing is shown, and the page explains what did not match.</div></details>
         <details class="reveal"><summary>How up to date are the prices?</summary><div class="ans">The app only knows your last Auctionator scan, so it labels data as fresh, aging, stale or very old and never presents stale prices as a deal. Scan in game and the app updates within seconds.</div></details>
       </div>
     </div>
