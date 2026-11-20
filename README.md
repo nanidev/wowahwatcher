@@ -99,7 +99,7 @@ After each scan you get a short, readable briefing: what to buy now, why, and wh
 ## Your data never leaves your PC
 
 - Everything is calculated **locally**. There are no accounts, no telemetry, no analytics and no third-party scripts.
-- The only optional network traffic is to **your own local Ollama**, and to a **Discord webhook you add yourself**. Nothing is sent unless you set one up.
+- The app only talks to **your own local Ollama**, to a **Discord webhook you add yourself**, and to **GitHub** to ask for the newest release number so it can offer updates (you can turn that off in Settings). Nothing about you or your data is sent. Updates are never installed without you pressing **Update now**.
 - Your WoW account name is hidden in the sidebar by default, so you can share a screenshot or stream without leaking your Battle.net number.
 
 ---
