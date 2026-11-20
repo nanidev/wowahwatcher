@@ -8,7 +8,7 @@
 [![Version](https://img.shields.io/github/v/release/nanidev/wowahwatcher?style=for-the-badge&color=f0bd57&labelColor=0a0e14&label=version)](https://github.com/nanidev/wowahwatcher/releases/latest)
 [![Windows](https://img.shields.io/badge/Windows-10%20%7C%2011-7db6ff?style=for-the-badge&labelColor=0a0e14&logo=windows&logoColor=white)](#requirements)
 [![Support on Ko-fi](https://img.shields.io/badge/Support%20on-Ko--fi-ff5e5b?style=for-the-badge&labelColor=0a0e14&logo=ko-fi&logoColor=white)](https://ko-fi.com/nanidev)
-[![Website](https://img.shields.io/badge/Website-nanidev.github.io%2Fwowahwatcher-7db6ff?style=for-the-badge&labelColor=0a0e14)](https://nanidev.github.io/wowahwatcher/)
+[![Website](https://img.shields.io/badge/Website-wowahwatcher.com-7db6ff?style=for-the-badge&labelColor=0a0e14)](https://wowahwatcher.com/)
 
 **Free for personal use &nbsp;·&nbsp; 100% local &nbsp;·&nbsp; No accounts &nbsp;·&nbsp; No telemetry**
 
