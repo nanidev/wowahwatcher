@@ -1,0 +1,56 @@
+WoW AH Watcher - Proprietary Software Licence
+
+Copyright (c) 2026 nanidev. All rights reserved.
+
+1. Ownership
+   WoW AH Watcher (the "Software"), including its source code, compiled
+   programs, text, graphics, logos, the "WoW AH Watcher" name, and
+   documentation, is the property of nanidev (the "Owner"). The Software is
+   licensed, not sold. No ownership rights are transferred to you.
+
+2. What you may do
+   You may download, install and run the compiled Software on your own
+   computers for your own personal, non-commercial use, free of charge.
+
+3. What you may not do
+   Without the Owner's prior written permission, you may not:
+   a. copy, redistribute, publish, sell, rent, lease, sublicense or host the
+	  Software, in whole or in part, or offer it as a service;
+   b. modify the Software or create derivative works from it;
+   c. decompile, disassemble, reverse engineer, or otherwise attempt to
+	  obtain the source code of the Software, except to the extent that this
+	  restriction is prohibited by applicable law;
+   d. remove, hide or alter any copyright, trademark, licence or attribution
+	  notice, or any donation or credit link, in the Software;
+   e. use the Software, its name, logos or its look and feel to promote or
+	  operate a competing or derivative product or service;
+   f. use the Software to build a dataset, model or product that is sold or
+	  offered to others.
+
+4. Included in-game addons
+   The addons in the "addon" folder (WowAhWatcherNames and
+   WowAhWatcherRecipes) are covered by their own licence file and are free to
+   use and share as stated there.
+
+5. Third-party components
+   The Software uses open-source components that remain under their own
+   licences. Nothing here changes those licences.
+
+6. Not affiliated
+   World of Warcraft and Blizzard Entertainment are trademarks of Blizzard
+   Entertainment, Inc. Auctionator belongs to its authors. The Software is an
+   independent tool and is not affiliated with or endorsed by them.
+
+7. No warranty
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+   NON-INFRINGEMENT. Signals and briefings are decision support, not
+   financial advice. THE OWNER IS NOT LIABLE FOR ANY CLAIM, DAMAGES OR LOSS,
+   INCLUDING LOST IN-GAME GOLD, ARISING FROM USE OF THE SOFTWARE.
+
+8. Termination
+   This licence ends automatically if you breach it. On termination you must
+   stop using the Software and delete all copies.
+
+9. Contact
+   For permission requests, contact the Owner through https://ko-fi.com/nanidev
