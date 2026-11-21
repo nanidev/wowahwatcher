@@ -104,10 +104,34 @@
     });
   }
 
+  /* Download links: point at the newest installer and zip; the releases page stays as the fallback */
+  (function () {
+    var dl = $$('[data-dl]');
+    if (!dl.length || !window.fetch) { return; }
+    fetch('https://api.github.com/repos/nanidev/wowahwatcher/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (rel) {
+        if (!rel || !rel.assets) { return; }
+        var find = function (re) {
+          var hit = rel.assets.filter(function (a) { return re.test(a.name); })[0];
+          return hit ? hit.browser_download_url : null;
+        };
+        var urls = { setup: find(/-Setup-.*\.exe$/i), zip: find(/\.zip$/i) };
+        dl.forEach(function (a) {
+          var u = urls[a.getAttribute('data-dl')];
+          if (u) { a.href = u; }
+        });
+      })
+      .catch(function () { });
+  })();
+
   /* Product tour: tabs with optional auto-advance */
   var tabs = $$('.tab');
   var shots = $$('.shots img');
-  var cap = $('#cap');
+  var capNo = $('#cap-no');
+  var capTitle = $('#cap-title');
+  var capText = $('#cap-text');
+  var pad = function (n) { return n < 10 ? '0' + n : '' + n; };
   var tour = $('#tour');
   var current = 0;
   var auto = !reduce;
@@ -122,7 +146,9 @@
       t.classList.remove('auto', 'paused');
     });
     shots.forEach(function (s, k) { s.classList.toggle('on', k === current); });
-    if (cap) { cap.textContent = tabs[current].querySelector('p').textContent; }
+    if (capNo) { capNo.textContent = pad(current + 1) + ' / ' + pad(tabs.length); }
+    if (capTitle) { capTitle.textContent = tabs[current].querySelector('strong').textContent; }
+    if (capText) { capText.textContent = tabs[current].querySelector('p').textContent; }
     if (byUser) {
       auto = false;
     } else if (auto && visible) {

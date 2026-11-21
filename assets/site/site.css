@@ -166,7 +166,13 @@ h1, h2, h3, p { margin: 0; }
 @keyframes fill { to { transform: scaleX(1); } }
 .viewer { position: relative; }
 .viewer .device { transform: none; transition: none; max-width: none; }
-.cap { margin-top: 18px; min-height: 3.2em; max-width: 62ch; color: var(--muted); font-size: 1rem; line-height: 1.55; }
+.cap { margin-top: 22px; max-width: 70ch; }
+.cap-no { display: block; color: var(--gold); font-size: .8rem; font-weight: 650; letter-spacing: .14em; text-transform: uppercase; }
+.cap-title { margin: 8px 0; font-size: 1.35rem; letter-spacing: -.02em; line-height: 1.2; color: var(--text); }
+.cap-text { margin: 0; min-height: 3.2em; color: #d3d9e2; font-size: 1.05rem; line-height: 1.6; }
+.dl-alt { margin-top: 18px; color: var(--muted); font-size: .98rem; }
+.dl-alt a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+.dl-alt a:hover { color: var(--text); }
 .shots { position: relative; aspect-ratio: 16 / 10; border-radius: 16px; overflow: hidden; background: #0b0f15; }
 .shots img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.03); transition: opacity .7s var(--ease), transform 1.1s var(--ease); }
 .shots img.on { opacity: 1; transform: none; }
