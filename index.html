@@ -17,14 +17,14 @@
 <meta property="og:title" content="WoW AH Watcher: know what to buy, craft and sell before the Auction House does">
 <meta property="og:description" content="Turn your Auctionator scans into BUY signals, true crafting profit, shopping lists and deal alerts. Free, 100% local, no accounts.">
 <meta property="og:url" content="https://wowahwatcher.com/">
-<meta property="og:image" content="https://wowahwatcher.com/assets/site/og-image.jpg?v=5">
+<meta property="og:image" content="https://wowahwatcher.com/assets/site/og-image.jpg?v=6">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="WoW AH Watcher dashboard showing BUY signals, crafting profit and a written market briefing">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="WoW AH Watcher: Auctionator market signals, crafting profit and deal alerts">
 <meta name="twitter:description" content="Free, 100% local Windows app that tells you what to buy, craft and sell in the World of Warcraft Auction House.">
-<meta name="twitter:image" content="https://wowahwatcher.com/assets/site/og-image.jpg?v=5">
+<meta name="twitter:image" content="https://wowahwatcher.com/assets/site/og-image.jpg?v=6">
 
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/site/favicon-32.png">
@@ -45,7 +45,7 @@
       "description": "A free, local Windows app that reads your Auctionator scans and shows BUY, SELL-HOLD and WATCH signals, true crafting profit, vendor flips, a shopping list and deal alerts for the World of Warcraft Auction House.",
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "Windows 10, Windows 11",
-      "softwareVersion": "1.1.1",
+      "softwareVersion": "1.1.2",
       "url": "https://wowahwatcher.com/",
       "downloadUrl": "https://github.com/nanidev/wowahwatcher/releases/latest",
       "image": "https://wowahwatcher.com/assets/site/og-image.jpg",
@@ -54,7 +54,9 @@
         "https://wowahwatcher.com/assets/screens/market.png",
         "https://wowahwatcher.com/assets/screens/crafting.png",
         "https://wowahwatcher.com/assets/screens/vendorflips.png",
-        "https://wowahwatcher.com/assets/screens/shopping.png"
+        "https://wowahwatcher.com/assets/screens/shopping.png",
+        "https://wowahwatcher.com/assets/screens/myitems.png",
+        "https://wowahwatcher.com/assets/screens/briefing.png"
       ],
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free for personal, non-commercial use" },
       "author": { "@type": "Person", "name": "nanidev", "url": "https://github.com/nanidev" },
@@ -63,8 +65,9 @@
         "Crafting profit after the 5% Auction House cut, using vendor prices only where stock is unlimited",
         "Vendor flips: items worth more at a vendor than where they are sold, both directions",
         "Combined shopping list with buy-versus-craft comparison",
+        "My items: everything your characters carry, bank and have listed, valued with live market signals",
         "Live deal alerts with optional Discord webhook",
-        "Optional local AI briefing through Ollama",
+        "Optional local AI briefing through Ollama, in four writing styles, with live progress and a Stop button",
         "100% local, no accounts, no telemetry"
       ]
     },
@@ -88,9 +91,9 @@
         { "@type": "Question", "name": "Which World of Warcraft versions work?", "acceptedAnswer": { "@type": "Answer", "text": "The app looks for the retail, classic and forever game folders. If your install is somewhere unusual, you can choose the WoW folder yourself in Settings." } },
         { "@type": "Question", "name": "Does it run on Mac or Linux?", "acceptedAnswer": { "@type": "Answer", "text": "Not at the moment. WoW AH Watcher is a Windows 10 and Windows 11 (64-bit) app." } },
         { "@type": "Question", "name": "Windows says \"Windows protected your PC\". Is that normal?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The first builds are not code-signed yet, so Windows SmartScreen may warn you. Click More info, then Run anyway. Every download ships with a .sha256 file so you can verify it is untouched." } },
-        { "@type": "Question", "name": "Why is a cheap-looking item not marked BUY?", "acceptedAnswer": { "@type": "Answer", "text": "A BUY needs a price well below what the item usually sells for, a profit after the 5% Auction House cut, enough history and enough supply. Items that are Thin, Stale, Volatile or Falling are never marked BUY, even when they look cheap. The item page gives the reason." } },
+        { "@type": "Question", "name": "Why is a cheap-looking item not marked BUY?", "acceptedAnswer": { "@type": "Answer", "text": "A BUY needs a price well below what the item usually sells for, a profit after the 5% Auction House cut, enough history and enough supply. Items that are Thin, Old price, Volatile or Falling are never marked BUY, even when they look cheap. The item page gives the reason." } },
         { "@type": "Question", "name": "Can the AI make up numbers?", "acceptedAnswer": { "@type": "Answer", "text": "Every figure in an AI summary is compared with the data the app calculated. If a price or item does not match, the summary is discarded, the verified briefing is shown, and the page explains what did not match." } },
-        { "@type": "Question", "name": "How up to date are the prices?", "acceptedAnswer": { "@type": "Answer", "text": "The app only knows your last Auctionator scan, so it labels data as fresh, aging, stale or very old and never presents stale prices as a deal. Scan in game and the app updates within seconds." } }
+        { "@type": "Question", "name": "How up to date are the prices?", "acceptedAnswer": { "@type": "Answer", "text": "The app reads the time Auctionator itself records for its last full scan, so it labels the data as fresh (under an hour), aging, stale or very old and never presents old prices as a deal. Scan in game and the app updates within seconds." } }
       ]
     }
   ]
@@ -179,7 +182,7 @@
     <div class="wrap">
       <div class="center reveal">
         <span class="eyebrow">Product tour</span>
-        <h2 class="h2" id="show-title">Eight pages. One clear answer.</h2>
+        <h2 class="h2" id="show-title">Nine pages. One clear answer.</h2>
         <p class="lead">Real screenshots from the real app. Pick a page and take a look.</p>
       </div>
       <div class="show reveal" id="tour">
@@ -191,7 +194,8 @@
           <button class="tab" role="tab" id="t4" aria-controls="viewer" aria-selected="false" tabindex="-1"><strong>Shopping list</strong><p>One combined list of everything to buy, and where crafting a part beats buying it.</p></button>
           <button class="tab" role="tab" id="t5" aria-controls="viewer" aria-selected="false" tabindex="-1"><strong>Alerts</strong><p>Each new deal announced once, with the price to stay under. Optional Discord webhook for your phone.</p></button>
           <button class="tab" role="tab" id="t6" aria-controls="viewer" aria-selected="false" tabindex="-1"><strong>Item page</strong><p>The price history chart, the fair price and the plain-language reason behind every signal.</p></button>
-          <button class="tab" role="tab" id="t7" aria-controls="viewer" aria-selected="false" tabindex="-1"><strong>Briefing</strong><p>A short readable summary of the latest scan, with your own notes to steer the optional local AI.</p></button>
+          <button class="tab" role="tab" id="t7" aria-controls="viewer" aria-selected="false" tabindex="-1"><strong>Briefing</strong><p>A short readable summary of the latest scan. Pick a writing style and add your own notes to steer the optional local AI.</p></button>
+          <button class="tab" role="tab" id="t8" aria-controls="viewer" aria-selected="false" tabindex="-1"><strong>My items</strong><p>Everything your characters carry, keep in the bank and have listed, valued at market prices and tagged with the same signals.</p></button>
         </div>
         <div class="viewer" id="viewer" role="tabpanel" aria-live="polite">
           <div class="device">
@@ -204,7 +208,9 @@
               <img src="assets/site/shopping-1600.webp" srcset="assets/site/shopping-800.webp 800w, assets/site/shopping-1600.webp 1600w" sizes="(max-width: 1000px) 100vw, 760px" width="1600" height="1000" alt="Shopping list with a combined materials list and a buy-versus-craft tree" loading="lazy">
               <img src="assets/site/alerts-1600.webp" srcset="assets/site/alerts-800.webp 800w, assets/site/alerts-1600.webp 1600w" sizes="(max-width: 1000px) 100vw, 760px" width="1600" height="1000" alt="Alerts feed listing new BUY deals with prices" loading="lazy">
               <img src="assets/site/item-1600.webp" srcset="assets/site/item-800.webp 800w, assets/site/item-1600.webp 1600w" sizes="(max-width: 1000px) 100vw, 760px" width="1600" height="1000" alt="Item page with price history chart and the reason for its signal" loading="lazy">
-              <img src="assets/site/briefing-1600.webp" srcset="assets/site/briefing-800.webp 800w, assets/site/briefing-1600.webp 1600w" sizes="(max-width: 1000px) 100vw, 760px" width="1600" height="1000" alt="Briefing page with notes for the AI and the latest written briefing" loading="lazy">
+              <img src="assets/site/briefing-1600.webp" srcset="assets/site/briefing-800.webp 800w, assets/site/briefing-1600.webp 1600w" sizes="(max-width: 1000px) 100vw, 760px" width="1600" height="1000" alt="Briefing page with a summary style menu, notes for the AI and the latest written briefing" loading="lazy">
+              <img src="assets/site/myitems-1600.webp" srcset="assets/site/myitems-800.webp 800w, assets/site/myitems-1600.webp 1600w" sizes="(max-width: 1000px) 100vw, 760px" width="1600" height="1000" alt="My items page listing what each character carries, keeps in the bank and has on the auction house, with market signals and worth" loading="lazy">
+
             </div>
           </div>
         </div>
@@ -225,11 +231,11 @@
         <article class="card span4 reveal">
           <span class="tag">Signals</span>
           <h3>Finds the real bargains</h3>
-          <p>Every scanned item gets one signal, based only on your own history. A BUY needs a price well below what the item usually sells for, a profit after the Auction House cut, enough history and enough supply. Thin, Stale, Volatile and Falling items are never shown as BUY, so one-listing flukes and still-falling prices never pass as deals.</p>
+          <p>Every scanned item gets one signal, based only on your own history. A BUY needs a price well below what the item usually sells for, a profit after the Auction House cut, enough history and enough supply. Thin, Old price, Volatile and Falling items are never shown as BUY, so one-listing flukes and still-falling prices never pass as deals.</p>
           <div class="demo chips">
             <div class="sig buy" style="--i:0"><b>BUY</b><span>Well below the fair price, and still a profit after the Auction House cut.</span></div>
             <div class="sig hold" style="--i:1"><b>SELL-HOLD</b><span>Already near or above the fair price. Hold stock instead of buying more.</span></div>
-            <div class="sig watch" style="--i:2"><b>WATCH</b><span>Nothing stands out yet, or the item is Thin, Stale, Volatile or Falling and not safe to buy.</span></div>
+            <div class="sig watch" style="--i:2"><b>WATCH</b><span>Nothing stands out yet, or the item is Thin, Old price, Volatile or Falling and not safe to buy.</span></div>
           </div>
         </article>
 
@@ -273,7 +279,7 @@
         <article class="card span2 reveal" style="--d:.2s">
           <span class="tag">Honesty</span>
           <h3>Honest about old data</h3>
-          <p>Fresh, aging, stale and very old are labelled, and stale prices never pose as a deal.</p>
+          <p>The age comes from Auctionator's own scan time, not from when a file was saved. Fresh, aging, stale and very old are labelled, and old prices never pose as a deal.</p>
           <div class="demo fresh" aria-hidden="true">
             <div class="bars"><i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i><i style="--i:3"></i></div>
             <div class="lab"><span>Fresh</span><span>Aging</span><span>Stale</span><span>Very old</span></div>
@@ -283,7 +289,7 @@
         <article class="card span3 reveal">
           <span class="tag">Briefing</span>
           <h3>A written briefing after every scan</h3>
-          <p>Built by fixed rules, so it always works. Run Ollama locally and an AI can turn it into a flowing summary, weighing your own notes against the numbers. Every figure an AI summary quotes is checked against your data first, and a mismatch is discarded with the reason shown. It all stays on your machine.</p>
+          <p>Built by fixed rules, so it always works. Run Ollama locally and an AI can turn it into a flowing summary in the style you pick (Coach, Quick flip, Crafter or Cautious), weighing your own notes against the numbers. You watch it being written and can stop it at any time, and a burst of scans gives one briefing, not a pile of them. Every figure an AI summary quotes is checked against your data first, and a mismatch is discarded with the reason shown. It all stays on your machine.</p>
           <div class="demo">
             <div class="type-label"><i></i>Local briefing</div>
             <div class="type" id="typer" data-text="Today looks good for cloth. Three items are well below their fair price with plenty of supply, so they are worth buying now. Your best craft still pays after the Auction House cut. Two flasks are Thin, so I would watch them rather than buy."></div>
@@ -299,7 +305,8 @@
           </div>
           <ul class="mini">
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Watchlist</b> built from your own market history</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Vendor flips</b> both ways, with stock and age flagged</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>My items</b> across every character, with market signals</span></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Vendor flips</b> both ways, with stock and age flagged</span></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Saved views</b> for your favourite filters</span></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>CSV export</b> of the whole market table</span></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Tray icon</b> to open, restart or quit</span></li>

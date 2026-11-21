@@ -32,7 +32,7 @@ It runs quietly on your own PC, opens in your browser, and stays out of the game
 ## What it does for you
 
 ### Finds the real bargains
-Every item from your latest scan gets a signal: **BUY**, **SELL-HOLD** or **WATCH**. A BUY means the price is well below what the item usually sells for, it still makes a profit after the Auction House cut, and there is enough history and supply to trust it. Items that are **Thin** (too few listings), **Stale** (old data), **Volatile** (prices swing too much) or **Falling** (the last few days sit well below the days before) are never marked BUY, so a one-listing fluke or a price that is still dropping never shows up as a "deal".
+Every item from your latest scan gets a signal: **BUY**, **SELL-HOLD** or **WATCH**. A BUY means the price is well below what the item usually sells for, it still makes a profit after the Auction House cut, and there is enough history and supply to trust it. Items that are **Thin** (too few listings), **Old price** (the item's price is old), **Volatile** (prices swing too much) or **Falling** (the last few days sit well below the days before) are never marked BUY, so a one-listing fluke or a price that is still dropping never shows up as a "deal".
 
 <div align="center">
 <img src="assets/screens/market.png" alt="The Market page with presets, filters, saved views and signal chips" width="92%">
@@ -63,6 +63,14 @@ Add the crafts you plan to make and how many of each. You get **one combined "wh
 <br><sub>Shopping list: one list for every material, and where crafting a part beats buying it.</sub>
 </div>
 
+### Shows what you own, and what it is worth
+The **My items** page lists what every character carries in their bags and bank, what sits in the warband bank, and what is listed on the Auction House, valued at the lowest price in your latest scan. Each item carries its market signal, so you can see at a glance which of your stock is at a sell price, which of your auctions have been undercut, and what you hold in total. Every place shows how old its scan is, and items with no price are counted separately instead of guessed. It needs the small Data helper addon, which the guided setup installs.
+
+<div align="center">
+<img src="assets/screens/myitems.png" alt="The My items page with each character's items, their market signals and what they are worth" width="92%">
+<br><sub>My items: everything your characters own and have listed, valued at market prices with live signals.</sub>
+</div>
+
 ### Tells you the moment a deal appears
 A live **Alerts** feed announces each new BUY deal once, with a badge in the sidebar so you notice without staring at the page. Prefer your phone? Add your own **Discord webhook** and the same alerts arrive in a private channel.
 
@@ -80,11 +88,11 @@ Each item page charts its price history and lists the notable days. Every figure
 </div>
 
 ### Writes you a briefing
-After each scan you get a short, readable briefing: what to buy now, why, and what to watch. It is built by fixed rules from your data, so it always works. If you run [Ollama](https://ollama.com) on your PC, a local AI can rewrite it as a flowing summary, and you can add your own notes ("more players reached this skill since launch, so supply is growing") that the AI weighs against the numbers. Every figure the AI quotes is checked against your data first; a summary that does not match is discarded, the verified briefing is shown, and the page says why. You can also read the rejected text, and a small rounding such as "20g" for a price is noted instead of throwing the whole summary away. The AI runs **on your machine**, so your data stays yours.
+After each scan you get a short, readable briefing: what to buy now, why, and what to watch. It is built by fixed rules from your data, so it always works. If you run [Ollama](https://ollama.com) on your PC, a local AI can rewrite it as a flowing summary in the style you choose (**Coach**, **Quick flip**, **Crafter** or **Cautious**), and you can add your own notes ("more players reached this skill since launch, so supply is growing") that the AI weighs against the numbers. You watch the summary being written, with live progress, and can stop it at any time. A burst of scans gives one briefing, not a pile of them. Every figure the AI quotes is checked against your data first; a summary that does not match is discarded, the verified briefing is shown, and the page says why. You can also read the rejected text, and a small rounding such as "20g" for a price is noted instead of throwing the whole summary away. The AI runs **on your machine**, so your data stays yours.
 
 <div align="center">
-<img src="assets/screens/briefing.png" alt="The Briefing page with your notes for the AI and the latest briefing" width="92%">
-<br><sub>Briefing: a written summary of the latest scan, with your own notes to steer it.</sub>
+<img src="assets/screens/briefing.png" alt="The Briefing page with a summary style menu, your notes for the AI and the latest briefing" width="92%">
+<br><sub>Briefing: a written summary of the latest scan, in the style you pick, with your own notes to steer it.</sub>
 </div>
 
 ---
@@ -96,7 +104,7 @@ After each scan you get a short, readable briefing: what to buy now, why, and wh
 | **Watchlist** | Follow the items you care about. Suggestions are built from your own market history, never from a built-in list. |
 | **Saved Market views** | Save a set of filters under a name and reopen it with one click. |
 | **CSV download** | Take the whole market table into a spreadsheet. |
-| **Honest freshness labels** | Fresh, aging, stale and very old data are labelled, and stale prices never pose as a deal. |
+| **Honest freshness labels** | The age comes from Auctionator's own scan time. Fresh (under an hour), aging, stale and very old data are labelled, and old prices never pose as a deal. |
 | **Guided setup** | Finds your WoW account, helps you install the two small helper addons (item names, vendor prices and recipes), and tells you exactly what is missing. |
 | **Gold, silver and copper** | Every price uses the in-game coin colours, everywhere in the app. |
 | **Runs like a normal Windows app** | No console window. It opens in your browser, and a tray icon lets you open, restart or quit it, and start it with Windows. |
