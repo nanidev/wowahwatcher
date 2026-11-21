@@ -42,10 +42,10 @@
       "@id": "https://wowahwatcher.com/#app",
       "name": "WoW AH Watcher",
       "alternateName": "WoWAHWatcher",
-      "description": "A free, local Windows app that reads your Auctionator scans and shows BUY, SELL-HOLD and WATCH signals, true crafting profit, a shopping list and deal alerts for the World of Warcraft Auction House.",
+      "description": "A free, local Windows app that reads your Auctionator scans and shows BUY, SELL-HOLD and WATCH signals, true crafting profit, vendor flips, a shopping list and deal alerts for the World of Warcraft Auction House.",
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "Windows 10, Windows 11",
-      "softwareVersion": "1.0.2",
+      "softwareVersion": "1.1.0",
       "url": "https://wowahwatcher.com/",
       "downloadUrl": "https://github.com/nanidev/wowahwatcher/releases/latest",
       "image": "https://wowahwatcher.com/assets/site/og-image.jpg",
@@ -53,13 +53,15 @@
         "https://wowahwatcher.com/assets/screens/dashboard.png",
         "https://wowahwatcher.com/assets/screens/market.png",
         "https://wowahwatcher.com/assets/screens/crafting.png",
+        "https://wowahwatcher.com/assets/screens/vendorflips.png",
         "https://wowahwatcher.com/assets/screens/shopping.png"
       ],
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free for personal, non-commercial use" },
       "author": { "@type": "Person", "name": "nanidev", "url": "https://github.com/nanidev" },
       "featureList": [
         "BUY, SELL-HOLD and WATCH signals from your own Auctionator history",
-        "Crafting profit after the 5% Auction House cut",
+        "Crafting profit after the 5% Auction House cut, using vendor prices only where stock is unlimited",
+        "Vendor flips: items worth more at a vendor than where they are sold, both directions",
         "Combined shopping list with buy-versus-craft comparison",
         "Live deal alerts with optional Discord webhook",
         "Optional local AI briefing through Ollama",
@@ -81,7 +83,8 @@
         { "@type": "Question", "name": "Does it send my data anywhere?", "acceptedAnswer": { "@type": "Answer", "text": "No. Everything is calculated locally on your PC. There are no accounts, no telemetry and no third-party scripts. The app only talks to your own local Ollama, to a Discord webhook if you add one, and to GitHub to ask for the newest release number (you can turn that off in Settings). Nothing about you or your data is sent." } },
         { "@type": "Question", "name": "Does it modify or automate World of Warcraft?", "acceptedAnswer": { "@type": "Answer", "text": "No. It never touches the game. It only reads the files that your addons already save to disk after you log out or type /reload, and it never buys, sells or clicks anything for you." } },
         { "@type": "Question", "name": "Do I need Ollama or an AI model?", "acceptedAnswer": { "@type": "Answer", "text": "No. Ollama is optional. Without it you still get a clear written briefing built from fixed rules. With Ollama installed, a local AI can rewrite the briefing as a flowing summary on your own machine." } },
-        { "@type": "Question", "name": "How is crafting profit calculated?", "acceptedAnswer": { "@type": "Answer", "text": "Each material is priced at the cheaper of its Auction House price and its vendor price, the 5% Auction House cut is taken off the sale price, and you see the net profit and margin. If a price is missing, the craft shows price unknown instead of inventing a total." } },
+        { "@type": "Question", "name": "How is crafting profit calculated?", "acceptedAnswer": { "@type": "Answer", "text": "Each material is priced at the cheaper of its Auction House price and its vendor price, but a vendor price only counts when the vendor has unlimited stock. Reputation discounts are already in the price Auctionator saved. The 5% Auction House cut is taken off the sale price, and you see the net profit and margin. Materials you can only get from a vendor are labelled, and crafts your characters cannot make are flagged. If a price is missing, the craft shows price unknown instead of inventing a total." } },
+        { "@type": "Question", "name": "What are vendor flips?", "acceptedAnswer": { "@type": "Answer", "text": "Vendor flips lists items that are worth more somewhere else than where they are sold: ones you can buy on the Auction House for less than a vendor pays, and ones a vendor sells for less than they fetch on the Auction House after the 5% cut. Every price comes from your own Auctionator scan or your own game. Auctionator does not save how many items are listed or whether a vendor has limited stock, so the page says when stock is not confirmed and leaves out old prices." } },
         { "@type": "Question", "name": "Which World of Warcraft versions work?", "acceptedAnswer": { "@type": "Answer", "text": "The app looks for the retail, classic and forever game folders. If your install is somewhere unusual, you can choose the WoW folder yourself in Settings." } },
         { "@type": "Question", "name": "Does it run on Mac or Linux?", "acceptedAnswer": { "@type": "Answer", "text": "Not at the moment. WoW AH Watcher is a Windows 10 and Windows 11 (64-bit) app." } },
         { "@type": "Question", "name": "Windows says \"Windows protected your PC\". Is that normal?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The first builds are not code-signed yet, so Windows SmartScreen may warn you. Click More info, then Run anyway. Every download ships with a .sha256 file so you can verify it is untouched." } },
@@ -120,7 +123,7 @@
     <div class="wrap">
       <div class="reveal in"><span class="pill"><b>FREE</b> Windows app for World of Warcraft</span></div>
       <h1 id="hero-title" class="reveal in" style="--d:.08s">Know what to buy, craft and sell. <span class="grad">Before the Auction House does.</span></h1>
-      <p class="lead reveal in" style="--d:.16s">WoW AH Watcher turns the prices Auctionator already records into plain-language decisions: real bargains, true crafting profit and a shopping list that does the maths. Quietly, on your own PC.</p>
+      <p class="lead reveal in" style="--d:.16s">WoW AH Watcher turns the prices Auctionator already records into plain-language decisions: real bargains, true crafting profit, vendor flips and a shopping list that does the maths. Quietly, on your own PC.</p>
       <div class="cta-row reveal in" style="--d:.24s">
         <a class="btn btn-gold btn-lg" href="https://github.com/nanidev/wowahwatcher/releases/latest">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg>
@@ -176,7 +179,7 @@
     <div class="wrap">
       <div class="center reveal">
         <span class="eyebrow">Product tour</span>
-        <h2 class="h2" id="show-title">Seven pages. One clear answer.</h2>
+        <h2 class="h2" id="show-title">Eight pages. One clear answer.</h2>
         <p class="lead">Real screenshots from the real app. Pick a page and take a look.</p>
       </div>
       <div class="show reveal" id="tour">
@@ -184,10 +187,11 @@
           <button class="tab" role="tab" id="t0" aria-controls="viewer" aria-selected="true"><strong>Dashboard</strong><p>Your best BUY signals, your most profitable craft and a written briefing, all on one calm page.</p></button>
           <button class="tab" role="tab" id="t1" aria-controls="viewer" aria-selected="false" tabindex="-1"><strong>Market</strong><p>Search and filter every scanned item, jump to presets like Buy now or Deep discounts, and save your own views.</p></button>
           <button class="tab" role="tab" id="t2" aria-controls="viewer" aria-selected="false" tabindex="-1"><strong>Crafting</strong><p>Every ingredient, the real cost and the profit after the Auction House cut, for the recipes your characters know.</p></button>
-          <button class="tab" role="tab" id="t3" aria-controls="viewer" aria-selected="false" tabindex="-1"><strong>Shopping list</strong><p>One combined list of everything to buy, and where crafting a part beats buying it.</p></button>
-          <button class="tab" role="tab" id="t4" aria-controls="viewer" aria-selected="false" tabindex="-1"><strong>Alerts</strong><p>Each new deal announced once, with the price to stay under. Optional Discord webhook for your phone.</p></button>
-          <button class="tab" role="tab" id="t5" aria-controls="viewer" aria-selected="false" tabindex="-1"><strong>Item page</strong><p>The price history chart, the fair price and the plain-language reason behind every signal.</p></button>
-          <button class="tab" role="tab" id="t6" aria-controls="viewer" aria-selected="false" tabindex="-1"><strong>Briefing</strong><p>A short readable summary of the latest scan, with your own notes to steer the optional local AI.</p></button>
+          <button class="tab" role="tab" id="t3" aria-controls="viewer" aria-selected="false" tabindex="-1"><strong>Vendor flips</strong><p>Items worth more at a vendor than where they are sold, both ways, with stock and price age flagged.</p></button>
+          <button class="tab" role="tab" id="t4" aria-controls="viewer" aria-selected="false" tabindex="-1"><strong>Shopping list</strong><p>One combined list of everything to buy, and where crafting a part beats buying it.</p></button>
+          <button class="tab" role="tab" id="t5" aria-controls="viewer" aria-selected="false" tabindex="-1"><strong>Alerts</strong><p>Each new deal announced once, with the price to stay under. Optional Discord webhook for your phone.</p></button>
+          <button class="tab" role="tab" id="t6" aria-controls="viewer" aria-selected="false" tabindex="-1"><strong>Item page</strong><p>The price history chart, the fair price and the plain-language reason behind every signal.</p></button>
+          <button class="tab" role="tab" id="t7" aria-controls="viewer" aria-selected="false" tabindex="-1"><strong>Briefing</strong><p>A short readable summary of the latest scan, with your own notes to steer the optional local AI.</p></button>
         </div>
         <div class="viewer" id="viewer" role="tabpanel" aria-live="polite">
           <div class="device">
@@ -196,6 +200,7 @@
               <img class="on" src="assets/site/dashboard-1600.webp" srcset="assets/site/dashboard-800.webp 800w, assets/site/dashboard-1600.webp 1600w" sizes="(max-width: 1000px) 100vw, 760px" width="1600" height="1000" alt="Dashboard page with BUY signals, best craft and briefing" loading="lazy">
               <img src="assets/site/market-1600.webp" srcset="assets/site/market-800.webp 800w, assets/site/market-1600.webp 1600w" sizes="(max-width: 1000px) 100vw, 760px" width="1600" height="1000" alt="Market page with presets, filters, saved views and signal chips" loading="lazy">
               <img src="assets/site/crafting-1600.webp" srcset="assets/site/crafting-800.webp 800w, assets/site/crafting-1600.webp 1600w" sizes="(max-width: 1000px) 100vw, 760px" width="1600" height="1000" alt="Crafting page showing ingredients, craft cost, net profit and margin" loading="lazy">
+              <img src="assets/site/vendorflips-1600.webp" srcset="assets/site/vendorflips-800.webp 800w, assets/site/vendorflips-1600.webp 1600w" sizes="(max-width: 1000px) 100vw, 760px" width="1600" height="1000" alt="Vendor flips page listing items to buy at the Auction House and sell to a vendor, and the reverse" loading="lazy">
               <img src="assets/site/shopping-1600.webp" srcset="assets/site/shopping-800.webp 800w, assets/site/shopping-1600.webp 1600w" sizes="(max-width: 1000px) 100vw, 760px" width="1600" height="1000" alt="Shopping list with a combined materials list and a buy-versus-craft tree" loading="lazy">
               <img src="assets/site/alerts-1600.webp" srcset="assets/site/alerts-800.webp 800w, assets/site/alerts-1600.webp 1600w" sizes="(max-width: 1000px) 100vw, 760px" width="1600" height="1000" alt="Alerts feed listing new BUY deals with prices" loading="lazy">
               <img src="assets/site/item-1600.webp" srcset="assets/site/item-800.webp 800w, assets/site/item-1600.webp 1600w" sizes="(max-width: 1000px) 100vw, 760px" width="1600" height="1000" alt="Item page with price history chart and the reason for its signal" loading="lazy">
@@ -231,7 +236,7 @@
         <article class="card span2 reveal" style="--d:.1s">
           <span class="tag">Crafting</span>
           <h3>The true profit of every craft</h3>
-          <p>Cheaper of Auction House or vendor price for each material, minus the 5% cut.</p>
+          <p>Cheaper of Auction House or vendor price for each material, minus the 5% cut. Vendor prices only count when the vendor never runs out.</p>
           <div class="demo receipt" aria-label="Illustrative crafting profit example">
             <div class="row"><span>Cloth &times; 12</span><span><span class="g">8g</span> <span class="s">40s</span></span></div>
             <div class="row"><span>Thread &times; 2</span><span><span class="g">1g</span> <span class="s">20s</span></span></div>
@@ -294,6 +299,7 @@
           </div>
           <ul class="mini">
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Watchlist</b> built from your own market history</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Vendor flips</b> both ways, with stock and age flagged</span></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Saved views</b> for your favourite filters</span></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>CSV export</b> of the whole market table</span></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Tray icon</b> to open, restart or quit</span></li>
@@ -303,7 +309,7 @@
         <article class="card span6 reveal">
           <span class="tag">Setup</span>
           <h3>Guided setup, built-in Help</h3>
-          <p style="max-width:52rem">The first run finds your WoW account, helps you install the two small helper addons and tells you exactly what is missing, in plain language. A full built-in guide explains every page, every signal and the in-game commands. No console window, no command line: it opens in your browser like a normal Windows app.</p>
+          <p style="max-width:52rem">The first run finds your WoW account, helps you install the two small helper addons (item names, vendor prices and recipes) and tells you exactly what is missing, in plain language. A full built-in guide explains every page, every signal and the in-game commands. No console window, no command line: it opens in your browser like a normal Windows app.</p>
         </article>
       </div>
     </div>
@@ -365,7 +371,8 @@
         <details class="reveal"><summary>Does it send my data anywhere?</summary><div class="ans">No. Everything is calculated locally on your PC. There are no accounts, no telemetry and no third-party scripts. The app only talks to your own local Ollama, to a Discord webhook if you add one, and to GitHub to ask for the newest release number (you can turn that off in Settings). Nothing about you or your data is sent.</div></details>
         <details class="reveal"><summary>Does it modify or automate World of Warcraft?</summary><div class="ans">No. It never touches the game. It only reads the files that your addons already save to disk after you log out or type <code>/reload</code>, and it never buys, sells or clicks anything for you.</div></details>
         <details class="reveal"><summary>Do I need Ollama or an AI model?</summary><div class="ans">No. Ollama is optional. Without it you still get a clear written briefing built from fixed rules. With Ollama installed, a local AI can rewrite the briefing as a flowing summary on your own machine.</div></details>
-        <details class="reveal"><summary>How is crafting profit calculated?</summary><div class="ans">Each material is priced at the cheaper of its Auction House price and its vendor price, the 5% Auction House cut is taken off the sale price, and you see the net profit and margin. If a price is missing, the craft shows &ldquo;price unknown&rdquo; instead of inventing a total.</div></details>
+        <details class="reveal"><summary>How is crafting profit calculated?</summary><div class="ans">Each material is priced at the cheaper of its Auction House price and its vendor price, but a vendor price only counts when the vendor has unlimited stock. Reputation discounts are already in the price Auctionator saved. The 5% Auction House cut is taken off the sale price, and you see the net profit and margin. Materials you can only get from a vendor are labelled, and crafts your characters cannot make are flagged. If a price is missing, the craft shows &ldquo;price unknown&rdquo; instead of inventing a total.</div></details>
+        <details class="reveal"><summary>What are vendor flips?</summary><div class="ans">Items that are worth more somewhere else than where they are sold: ones you can buy on the Auction House for less than a vendor pays, and ones a vendor sells for less than they fetch on the Auction House after the 5% cut. Every price comes from your own Auctionator scan or your own game. Auctionator does not save how many items are listed or whether a vendor has limited stock, so the page says when stock is not confirmed and leaves out old prices.</div></details>
         <details class="reveal"><summary>Which World of Warcraft versions work?</summary><div class="ans">The app looks for the retail, classic and forever game folders. If your install is somewhere unusual, you can choose the WoW folder yourself in Settings.</div></details>
         <details class="reveal"><summary>Does it run on Mac or Linux?</summary><div class="ans">Not at the moment. WoW AH Watcher is a Windows 10 and Windows 11 (64-bit) app.</div></details>
         <details class="reveal"><summary>Windows says &ldquo;Windows protected your PC&rdquo;. Is that normal?</summary><div class="ans">Yes. The first builds are not code-signed yet, so Windows SmartScreen may warn you. Click <b>More info</b>, then <b>Run anyway</b>. Every download ships with a <code>.sha256</code> file so you can verify it is untouched.</div></details>

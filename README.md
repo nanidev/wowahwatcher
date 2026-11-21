@@ -40,11 +40,19 @@ Every item from your latest scan gets a signal: **BUY**, **SELL-HOLD** or **WATC
 </div>
 
 ### Shows the true profit of every craft
-Crafting is costed from the recipes **your characters actually know**. Every material is priced at the cheaper of its Auction House price and its vendor price, the 5% Auction House cut is taken off, and you see the net profit and margin. If a price is missing, the craft says **"price unknown"**. It never invents a total. Search by name, or press **Show all**, to find any priced craft, not just the top few.
+Crafting is costed from the recipes **your characters actually know**. Every material is priced at the cheaper of its Auction House price and its vendor price, the 5% Auction House cut is taken off, and you see the net profit and margin. A vendor price only counts when the vendor has **unlimited stock**, so limited-stock items are never treated as always buyable. Reputation discounts are already in the price Auctionator saved. Vendor-bought materials carry a **Vendor** label, and crafts your characters cannot make are flagged. If a price is missing, the craft says **"price unknown"**. It never invents a total. Search by name, or press **Show all**, to find any priced craft, not just the top few.
 
 <div align="center">
 <img src="assets/screens/crafting.png" alt="The Crafting page showing ingredients, craft cost, net profit and margin" width="92%">
 <br><sub>Crafting: every ingredient, the real cost, and the profit after the Auction House cut.</sub>
+</div>
+
+### Spots flips between the Auction House and vendors
+The **Vendor flips** page lists items that are worth more somewhere else than where they are sold, in both directions: items you can **buy on the Auction House for less than a vendor pays**, and items a **vendor sells for less than they fetch on the Auction House** after the 5% cut. Every price comes from your own scan or your own game, never a guess. Auctionator does not save how many items are listed or whether a vendor has limited stock, so the page tells you when stock is not confirmed, leaves out old prices and shows how many it skipped. Check the listings before you buy.
+
+<div align="center">
+<img src="assets/screens/vendorflips.png" alt="The Vendor flips page with trades between the Auction House and vendors" width="92%">
+<br><sub>Vendor flips: both directions, with stock and price age flagged.</sub>
 </div>
 
 ### Plans your whole shopping trip
@@ -72,7 +80,7 @@ Each item page charts its price history and lists the notable days. Every figure
 </div>
 
 ### Writes you a briefing
-After each scan you get a short, readable briefing: what to buy now, why, and what to watch. It is built by fixed rules from your data, so it always works. If you run [Ollama](https://ollama.com) on your PC, a local AI can rewrite it as a flowing summary, and you can add your own notes ("more players reached this skill since launch, so supply is growing") that the AI weighs against the numbers. Every figure the AI quotes is checked against your data first; a summary that does not match is discarded, the verified briefing is shown, and the page says why. The AI runs **on your machine**, so your data stays yours.
+After each scan you get a short, readable briefing: what to buy now, why, and what to watch. It is built by fixed rules from your data, so it always works. If you run [Ollama](https://ollama.com) on your PC, a local AI can rewrite it as a flowing summary, and you can add your own notes ("more players reached this skill since launch, so supply is growing") that the AI weighs against the numbers. Every figure the AI quotes is checked against your data first; a summary that does not match is discarded, the verified briefing is shown, and the page says why. You can also read the rejected text, and a small rounding such as "20g" for a price is noted instead of throwing the whole summary away. The AI runs **on your machine**, so your data stays yours.
 
 <div align="center">
 <img src="assets/screens/briefing.png" alt="The Briefing page with your notes for the AI and the latest briefing" width="92%">
@@ -89,10 +97,11 @@ After each scan you get a short, readable briefing: what to buy now, why, and wh
 | **Saved Market views** | Save a set of filters under a name and reopen it with one click. |
 | **CSV download** | Take the whole market table into a spreadsheet. |
 | **Honest freshness labels** | Fresh, aging, stale and very old data are labelled, and stale prices never pose as a deal. |
-| **Guided setup** | Finds your WoW account, helps you install the two small helper addons, and tells you exactly what is missing. |
+| **Guided setup** | Finds your WoW account, helps you install the two small helper addons (item names, vendor prices and recipes), and tells you exactly what is missing. |
 | **Gold, silver and copper** | Every price uses the in-game coin colours, everywhere in the app. |
 | **Runs like a normal Windows app** | No console window. It opens in your browser, and a tray icon lets you open, restart or quit it, and start it with Windows. |
-| **Built-in Help** | A full guide to every page, the signals and the in-game commands. |
+| **Item names for every item** | The Names helper addon records real item names and what vendors pay, so prices are not shown as bare numbers. |
+| **Built-in Help** | A full guide to every page, the signals, the glossary and the in-game commands. |
 
 ---
 
