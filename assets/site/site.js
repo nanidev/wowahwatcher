@@ -107,6 +107,7 @@
   /* Product tour: tabs with optional auto-advance */
   var tabs = $$('.tab');
   var shots = $$('.shots img');
+  var cap = $('#cap');
   var tour = $('#tour');
   var current = 0;
   var auto = !reduce;
@@ -121,6 +122,7 @@
       t.classList.remove('auto', 'paused');
     });
     shots.forEach(function (s, k) { s.classList.toggle('on', k === current); });
+    if (cap) { cap.textContent = tabs[current].querySelector('p').textContent; }
     if (byUser) {
       auto = false;
     } else if (auto && visible) {
