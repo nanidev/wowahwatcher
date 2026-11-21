@@ -64,6 +64,7 @@ h1, h2, h3, p { margin: 0; }
 .nav-links a { color: var(--muted); font-size: .95rem; padding: 8px 14px; border-radius: 999px; transition: color .2s, background .2s; }
 .nav-links a:hover { color: var(--text); background: rgba(255, 255, 255, .07); text-decoration: none; }
 .nav-cta { margin-left: 6px; }
+.nav-support { margin-right: 4px; }
 .menu-btn { display: none; width: 40px; height: 40px; border: 0; border-radius: 50%; background: rgba(255, 255, 255, .07); color: var(--text); cursor: pointer; }
 .menu-btn span, .menu-btn span::before, .menu-btn span::after { display: block; width: 16px; height: 2px; background: currentColor; border-radius: 2px; margin: auto; transition: transform .3s var(--ease), opacity .2s; content: ""; position: relative; }
 .menu-btn span::before { position: absolute; top: -5px; left: 0; }
