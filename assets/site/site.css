@@ -85,6 +85,9 @@ h1, h2, h3, p { margin: 0; }
 .btn-gold:hover { background: linear-gradient(135deg, #fbdc92, #f5c867 45%, #ffae5c); box-shadow: 0 16px 44px -8px rgba(240, 189, 87, .75), 0 1px 0 rgba(255, 255, 255, .5) inset; }
 .btn-kofi { color: #fff; background: linear-gradient(135deg, #ff7b78, var(--red)); box-shadow: 0 10px 34px -10px rgba(255, 94, 91, .6), 0 1px 0 rgba(255, 255, 255, .35) inset; }
 .btn-kofi:hover { background: linear-gradient(135deg, #ff8d8a, #ff6b68); }
+.btn-discord { color: #fff; background: #5865f2; box-shadow: 0 10px 34px -10px rgba(88, 101, 242, .6), 0 1px 0 rgba(255, 255, 255, .3) inset; }
+.btn-discord:hover { background: #4752c4; }
+.nav-discord { padding: 9px 11px; }
 .btn-sm { padding: 9px 18px; font-size: .95rem; }
 .btn-lg { padding: 17px 34px; font-size: 1.1rem; }
 .btn svg { width: 1.15em; height: 1.15em; flex: none; }
