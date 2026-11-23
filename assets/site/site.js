@@ -126,62 +126,63 @@
   })();
 
   /* Product tour: tabs with optional auto-advance */
-  var tabs = $$('.tab');
-  var shots = $$('.shots img');
-  var capNo = $('#cap-no');
-  var capTitle = $('#cap-title');
-  var capText = $('#cap-text');
   var pad = function (n) { return n < 10 ? '0' + n : '' + n; };
-  var tour = $('#tour');
-  var current = 0;
-  var auto = !reduce;
-  var visible = false;
+  $$('.show').forEach(function (tour) {
+    var tabs = $$('.tab', tour);
+    var shots = $$('.shots img', tour);
+    var capNo = $('.cap-no', tour);
+    var capTitle = $('.cap-title', tour);
+    var capText = $('.cap-text', tour);
+    var current = 0;
+    var auto = !reduce;
+    var visible = false;
 
-  function select(i, byUser) {
-    current = (i + tabs.length) % tabs.length;
-    tabs.forEach(function (t, k) {
-      var on = k === current;
-      t.setAttribute('aria-selected', on ? 'true' : 'false');
-      t.tabIndex = on ? 0 : -1;
-      t.classList.remove('auto', 'paused');
-    });
-    shots.forEach(function (s, k) { s.classList.toggle('on', k === current); });
-    if (capNo) { capNo.textContent = pad(current + 1) + ' / ' + pad(tabs.length); }
-    if (capTitle) { capTitle.textContent = tabs[current].querySelector('strong').textContent; }
-    if (capText) { capText.textContent = tabs[current].querySelector('p').textContent; }
-    if (byUser) {
-      auto = false;
-    } else if (auto && visible) {
-      // Restart the progress bar animation for the new tab
-      void tabs[current].offsetWidth;
-      tabs[current].classList.add('auto');
+    function select(i, byUser) {
+      current = (i + tabs.length) % tabs.length;
+      tabs.forEach(function (t, k) {
+        var on = k === current;
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
+        t.classList.remove('auto', 'paused');
+      });
+      shots.forEach(function (s, k) { s.classList.toggle('on', k === current); });
+      if (capNo) { capNo.textContent = pad(current + 1) + ' / ' + pad(tabs.length); }
+      if (capTitle) { capTitle.textContent = tabs[current].querySelector('strong').textContent; }
+      if (capText) { capText.textContent = tabs[current].querySelector('p').textContent; }
+      if (byUser) {
+        auto = false;
+      } else if (auto && visible) {
+        // Restart the progress bar animation for the new tab
+        void tabs[current].offsetWidth;
+        tabs[current].classList.add('auto');
+      }
+      if (window.innerWidth <= 1000 && byUser) {
+        tabs[current].scrollIntoView({ block: 'nearest', inline: 'center', behavior: reduce ? 'auto' : 'smooth' });
+      }
     }
-    if (window.innerWidth <= 1000 && byUser) {
-      tabs[current].scrollIntoView({ block: 'nearest', inline: 'center', behavior: reduce ? 'auto' : 'smooth' });
-    }
-  }
-  tabs.forEach(function (t, i) {
-    t.addEventListener('click', function () { select(i, true); });
-    t.addEventListener('keydown', function (e) {
-      var d = e.key === 'ArrowDown' || e.key === 'ArrowRight' ? 1 : e.key === 'ArrowUp' || e.key === 'ArrowLeft' ? -1 : 0;
-      if (d) { e.preventDefault(); select(current + d, true); tabs[current].focus(); }
-      if (e.key === 'Home') { e.preventDefault(); select(0, true); tabs[0].focus(); }
-      if (e.key === 'End') { e.preventDefault(); select(tabs.length - 1, true); tabs[tabs.length - 1].focus(); }
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { select(i, true); });
+      t.addEventListener('keydown', function (e) {
+        var d = e.key === 'ArrowDown' || e.key === 'ArrowRight' ? 1 : e.key === 'ArrowUp' || e.key === 'ArrowLeft' ? -1 : 0;
+        if (d) { e.preventDefault(); select(current + d, true); tabs[current].focus(); }
+        if (e.key === 'Home') { e.preventDefault(); select(0, true); tabs[0].focus(); }
+        if (e.key === 'End') { e.preventDefault(); select(tabs.length - 1, true); tabs[tabs.length - 1].focus(); }
+      });
+      t.addEventListener('animationend', function () { if (auto && i === current) select(current + 1, false); });
     });
-    t.addEventListener('animationend', function () { if (auto && i === current) select(current + 1, false); });
+    if (tour) {
+      tour.addEventListener('pointerenter', function () { tabs[current].classList.add('paused'); });
+      tour.addEventListener('pointerleave', function () { tabs[current].classList.remove('paused'); });
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+          visible = entries[0].isIntersecting;
+          if (auto) {
+            if (visible) { tabs[current].classList.add('auto'); } else { tabs[current].classList.remove('auto'); }
+          }
+        }, { threshold: 0.4 }).observe(tour);
+      }
+    }
   });
-  if (tour) {
-    tour.addEventListener('pointerenter', function () { tabs[current].classList.add('paused'); });
-    tour.addEventListener('pointerleave', function () { tabs[current].classList.remove('paused'); });
-    if ('IntersectionObserver' in window) {
-      new IntersectionObserver(function (entries) {
-        visible = entries[0].isIntersecting;
-        if (auto) {
-          if (visible) { tabs[current].classList.add('auto'); } else { tabs[current].classList.remove('auto'); }
-        }
-      }, { threshold: 0.4 }).observe(tour);
-    }
-  }
 
   /* Typing demo in the briefing card */
   var typer = $('#typer');

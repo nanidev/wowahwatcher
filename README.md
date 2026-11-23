@@ -110,6 +110,38 @@ The whole app is free. Supporters (a coffee on Ko-fi unlocks it) can sign in onc
 
 Signing in is optional and only confirms that you are a supporter. Everything that was free stays free.
 
+<div align="center">
+<img src="assets/remote-devices.png" alt="The Remote dashboard on a TV, a desktop, a tablet and two phones" width="92%">
+<br><sub>Remote dashboard: pair a phone, tablet, laptop or TV once with a short PIN. It is read-only, adapts to the screen and follows your light or dark theme.</sub>
+</div>
+
+<div align="center">
+<img src="assets/screens/ledger.png" alt="The Profit ledger with a monthly goal, week by week results and profit per item" width="92%">
+<br><sub>Profit ledger: your real sales and purchases, a monthly goal with a pace line, and the true profit per item.</sub>
+</div>
+
+<div align="center">
+<img src="assets/screens/bestdays.png" alt="The Best days page with a weekday heat map of cheap and dear days" width="92%">
+<br><sub>Best days: when each item is usually cheapest and dearest, with your watchlist on top.</sub>
+</div>
+
+<div align="center">
+<img src="assets/screens/advisor.png" alt="The Trade advisor with items to sell now, items to buy and profitable crafts" width="92%">
+<br><sub>Trade advisor: a plan for today built from what you hold and the current market.</sub>
+</div>
+
+<div align="center">
+<img src="assets/screens/scorecard.png" alt="The Signal scorecard showing how past BUY signals played out" width="92%">
+<br><sub>Signal scorecard: how often the Buy signal really paid off, replayed over your own history.</sub>
+</div>
+
+<div align="center">
+<img src="assets/screens/streamer.png" alt="The My items page in streamer mode with names and gold blurred" width="92%">
+<br><sub>Streamer mode: hide names, folders and gold, and choose whether your items stay visible.</sub>
+</div>
+
+<sub>All screenshots use made-up characters and prices.</sub>
+
 ---
 
 ## Everything else in the box

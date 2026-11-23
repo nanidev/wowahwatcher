@@ -8,5 +8,7 @@
 	<image:image><image:loc>https://wowahwatcher.com/assets/screens/dashboard.png</image:loc><image:title>WoW AH Watcher dashboard</image:title></image:image>
 	<image:image><image:loc>https://wowahwatcher.com/assets/screens/crafting.png</image:loc><image:title>WoW AH Watcher crafting profit</image:title></image:image>
 	<image:image><image:loc>https://wowahwatcher.com/assets/screens/market.png</image:loc><image:title>WoW AH Watcher market page</image:title></image:image>
+	<image:image><image:loc>https://wowahwatcher.com/assets/screens/ledger.png</image:loc><image:title>WoW AH Watcher profit ledger</image:title></image:image>
+	<image:image><image:loc>https://wowahwatcher.com/assets/screens/bestdays.png</image:loc><image:title>WoW AH Watcher best days heat map</image:title></image:image>
   </url>
 </urlset>

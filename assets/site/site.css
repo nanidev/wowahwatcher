@@ -181,6 +181,30 @@ h1, h2, h3, p { margin: 0; }
 .shots img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.03); transition: opacity .7s var(--ease), transform 1.1s var(--ease); }
 .shots img.on { opacity: 1; transform: none; }
 
+/* Remote dashboard on four screens. Everything inside scales with the stage width (cqw). */
+.devices { position: relative; margin: 64px auto 0; max-width: 1180px; aspect-ratio: 1180 / 760; container-type: inline-size; }
+.devices::before { content: ""; position: absolute; inset: -6% 0 -2%; z-index: 0; pointer-events: none; background: radial-gradient(50% 55% at 52% 42%, rgba(240, 189, 87, .16), transparent 70%), radial-gradient(40% 50% at 12% 70%, rgba(125, 182, 255, .12), transparent 70%); }
+.dv { position: absolute; z-index: 2; background: linear-gradient(145deg, #353d4d, #12161e 55%, #232a37); box-shadow: 0 3.2cqw 6cqw -1.6cqw rgba(0, 0, 0, .85), 0 0 0 1px rgba(255, 255, 255, .16) inset, 0 0 0 1px rgba(0, 0, 0, .65); }
+.dv img { display: block; width: 100%; height: auto; background: #0b0f15; }
+.dv-tv { z-index: 1; padding: .5cqw; border-radius: 1cqw; }
+.dv-tv img { border-radius: .6cqw; }
+.dv-desktop { padding: .7cqw .7cqw 1.5cqw; border-radius: 1cqw; }
+.dv-desktop img { border-radius: .45cqw; }
+.dv-tv::before, .dv-desktop::before { content: ""; position: absolute; top: 100%; left: 50%; width: 5%; height: 2cqw; transform: translateX(-50%); background: linear-gradient(90deg, #12161e, #2b3341, #12161e); }
+.dv-tv::after, .dv-desktop::after { content: ""; position: absolute; top: calc(100% + 1.9cqw); left: 50%; width: 26%; height: .55cqw; transform: translateX(-50%); border-radius: .3cqw; background: linear-gradient(#303847, #151a23); box-shadow: 0 1.2cqw 2cqw -.6cqw rgba(0, 0, 0, .7); }
+.dv-tablet { padding: .8cqw; border-radius: 2.4cqw; }
+.dv-tablet img { border-radius: 1.7cqw; }
+.dv-phone { padding: .55cqw; border-radius: 3.4cqw; z-index: 3; }
+.dv-phone img { border-radius: 2.9cqw; }
+.dv-phone::after { content: ""; position: absolute; right: -.25cqw; top: 17%; width: .25cqw; height: 5cqw; border-radius: .2cqw; background: #2d3544; }
+.js .devices .dv { opacity: 0; transform: translateY(5cqw) scale(.96); transition: opacity .9s var(--ease), transform 1.1s var(--ease); transition-delay: var(--d, 0s); }
+.js .devices.in .dv { opacity: 1; transform: none; }
+.js .devices.reveal { filter: none; transform: none; }
+.dv-legend { list-style: none; margin: 56px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.dv-legend li { padding: 18px 20px; border-radius: 22px; background: var(--glass); border: 1px solid var(--line); backdrop-filter: blur(14px); }
+.dv-legend b { display: block; color: var(--gold); font-size: .82rem; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 6px; }
+.dv-legend span { color: var(--muted); font-size: .98rem; line-height: 1.45; }
+
 /* Bento */
 .bento { display: grid; grid-template-columns: repeat(6, 1fr); gap: 18px; margin-top: 64px; }
 .card {
@@ -310,7 +334,12 @@ h1, h2, h3, p { margin: 0; }
   .span4 { grid-column: span 2; }
   .privacy { grid-template-columns: 1fr; }
   .req { grid-template-columns: repeat(2, 1fr); }
+  .dv-legend { grid-template-columns: repeat(2, 1fr); }
   .float { display: none; }
+}
+@media (min-width: 761px) and (max-width: 960px) {
+  .nav-links a { padding: 8px 9px; font-size: .9rem; }
+  .nav-support { display: none; }
 }
 @media (max-width: 760px) {
   .nav-links { position: absolute; top: calc(100% + 10px); left: 24px; right: 24px; flex-direction: column; align-items: stretch; padding: 12px; border-radius: 26px; background: var(--glass-strong); border: 1px solid var(--line-strong); backdrop-filter: blur(24px) saturate(180%); opacity: 0; transform: translateY(-10px) scale(.97); pointer-events: none; transition: opacity .3s, transform .4s var(--ease); }
@@ -327,6 +356,8 @@ h1, h2, h3, p { margin: 0; }
   .bento { grid-template-columns: 1fr; }
   .span2, .span3, .span4, .span6 { grid-column: span 1; }
   .req { grid-template-columns: 1fr; }
+  .dv-legend { grid-template-columns: 1fr; margin-top: 40px; }
+  .devices { margin-top: 44px; }
   .mini { grid-template-columns: 1fr; }
   .support { grid-template-columns: 1fr; }
   .wrap { width: calc(100% - 32px); }

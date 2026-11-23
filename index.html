@@ -17,14 +17,14 @@
 <meta property="og:title" content="WoW AH Watcher: know what to buy, craft and sell before the Auction House does">
 <meta property="og:description" content="Turn your Auctionator scans into BUY signals, true crafting profit, shopping lists and deal alerts. Free, 100% local, no accounts.">
 <meta property="og:url" content="https://wowahwatcher.com/">
-<meta property="og:image" content="https://wowahwatcher.com/assets/site/og-image.jpg?v=6">
+<meta property="og:image" content="https://wowahwatcher.com/assets/site/og-image.jpg?v=7">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="WoW AH Watcher dashboard showing BUY signals, crafting profit and a written market briefing">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="WoW AH Watcher: Auctionator market signals, crafting profit and deal alerts">
 <meta name="twitter:description" content="Free, 100% local Windows app that tells you what to buy, craft and sell in the World of Warcraft Auction House.">
-<meta name="twitter:image" content="https://wowahwatcher.com/assets/site/og-image.jpg?v=6">
+<meta name="twitter:image" content="https://wowahwatcher.com/assets/site/og-image.jpg?v=7">
 
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/site/favicon-32.png">
@@ -56,7 +56,12 @@
         "https://wowahwatcher.com/assets/screens/vendorflips.png",
         "https://wowahwatcher.com/assets/screens/shopping.png",
         "https://wowahwatcher.com/assets/screens/myitems.png",
-        "https://wowahwatcher.com/assets/screens/briefing.png"
+        "https://wowahwatcher.com/assets/screens/briefing.png",
+        "https://wowahwatcher.com/assets/screens/bestdays.png",
+        "https://wowahwatcher.com/assets/screens/ledger.png",
+        "https://wowahwatcher.com/assets/screens/advisor.png",
+        "https://wowahwatcher.com/assets/screens/scorecard.png",
+        "https://wowahwatcher.com/assets/screens/watchlist.png"
       ],
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free for personal, non-commercial use" },
       "author": { "@type": "Person", "name": "nanidev", "url": "https://github.com/nanidev" },
@@ -113,6 +118,7 @@
     <nav class="nav-links" id="menu" aria-label="Main">
       <a href="#showcase">Showcase</a>
       <a href="#features">Features</a>
+      <a href="#supporters">Supporters</a>
       <a href="#privacy">Privacy</a>
       <a href="#start">Get started</a>
       <a href="#faq">FAQ</a>
@@ -335,6 +341,62 @@
           <p style="max-width:52rem">The first run finds your WoW account, helps you install the two small helper addons (item names, vendor prices and recipes) and tells you exactly what is missing, in plain language. A full built-in guide explains every page, every signal and the in-game commands. No console window, no command line: it opens in your browser like a normal Windows app.</p>
         </article>
       </div>
+    </div>
+  </section>
+
+  <!-- SUPPORTERS -->
+  <section class="section" id="supporters" aria-labelledby="sup-title" style="padding-top:0">
+    <div class="wrap">
+      <div class="center reveal">
+        <span class="eyebrow">Supporter extras</span>
+        <h2 class="h2" id="sup-title">Go further when you want to.</h2>
+        <p class="lead">The whole app is free. Supporters unlock extra pages and tools for planning, tracking and sharing safely, all calculated on your own PC. The screenshots use made-up characters and prices.</p>
+      </div>
+      <div class="show reveal" id="tour2">
+        <div class="tabs" role="tablist" aria-label="Supporter pages" aria-orientation="vertical">
+          <button class="tab" role="tab" id="s0" aria-controls="viewer2" aria-selected="true"><strong>Best days</strong><p>A weekday heat map of when each item is cheapest and dearest, with your watchlist on top, so you buy and list on the right day.</p></button>
+          <button class="tab" role="tab" id="s1" aria-controls="viewer2" aria-selected="false" tabindex="-1"><strong>Profit ledger</strong><p>What you really sold and bought: a monthly goal with a pace line, a bar for every week and the true profit per item.</p></button>
+          <button class="tab" role="tab" id="s2" aria-controls="viewer2" aria-selected="false" tabindex="-1"><strong>Trade advisor</strong><p>A plan for today built from what you hold: what to sell now, what to buy and which crafts still pay after the cut.</p></button>
+          <button class="tab" role="tab" id="s3" aria-controls="viewer2" aria-selected="false" tabindex="-1"><strong>Signal scorecard</strong><p>An honest report card. See how past BUY signals really played out, with the win rate and the average gain.</p></button>
+          <button class="tab" role="tab" id="s4" aria-controls="viewer2" aria-selected="false" tabindex="-1"><strong>Streamer mode</strong><p>One click hides names, folders and gold. Choose whether your items stay visible, so you can stream or share a screenshot safely.</p></button>
+        </div>
+        <div class="viewer" id="viewer2" role="tabpanel" aria-live="polite">
+          <div class="device">
+            <div class="bar" aria-hidden="true"><i></i><i></i><i></i><em>localhost:5186</em></div>
+            <div class="shots">
+              <img class="on" src="assets/site/bestdays-1600.webp" srcset="assets/site/bestdays-800.webp 800w, assets/site/bestdays-1600.webp 1600w" sizes="(max-width: 1000px) 100vw, 760px" width="1600" height="1000" alt="Best days page with a weekday heat map of the cheapest and dearest days for each item" loading="lazy">
+              <img src="assets/site/ledger-1600.webp" srcset="assets/site/ledger-800.webp 800w, assets/site/ledger-1600.webp 1600w" sizes="(max-width: 1000px) 100vw, 760px" width="1600" height="1000" alt="Profit ledger with a monthly goal, week by week results and profit per item" loading="lazy">
+              <img src="assets/site/advisor-1600.webp" srcset="assets/site/advisor-800.webp 800w, assets/site/advisor-1600.webp 1600w" sizes="(max-width: 1000px) 100vw, 760px" width="1600" height="1000" alt="Trade advisor with items to sell now, items to buy and profitable crafts" loading="lazy">
+              <img src="assets/site/scorecard-1600.webp" srcset="assets/site/scorecard-800.webp 800w, assets/site/scorecard-1600.webp 1600w" sizes="(max-width: 1000px) 100vw, 760px" width="1600" height="1000" alt="Signal scorecard showing how past BUY signals played out" loading="lazy">
+              <img src="assets/site/streamer-1600.webp" srcset="assets/site/streamer-800.webp 800w, assets/site/streamer-1600.webp 1600w" sizes="(max-width: 1000px) 100vw, 760px" width="1600" height="1000" alt="My items page in streamer mode with names and gold blurred while the items stay visible" loading="lazy">
+            </div>
+          </div>
+          <div class="cap">
+            <span class="cap-no">01 / 05</span>
+            <h3 class="cap-title">Best days</h3>
+            <p class="cap-text">A weekday heat map of when each item is cheapest and dearest, with your watchlist on top, so you buy and list on the right day.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="center reveal" id="remote" style="margin-top:clamp(80px,11vw,150px)">
+        <span class="eyebrow">Remote dashboard</span>
+        <h2 class="h2" id="remote-title">Your market, on every screen.</h2>
+        <p class="lead">Check your goal and your best buys from the sofa. Pair a phone, a tablet, a laptop or the TV once with a short PIN, and the dashboard follows you around the house. It is read-only, it adapts to the screen, and it follows your light or dark theme.</p>
+      </div>
+      <div class="devices reveal" role="group" aria-label="The Remote dashboard on a TV, a desktop, a tablet and two phones">
+        <div class="dv dv-tv" style="left:27.12%;top:0;width:54.24%;--d:.05s"><img src="assets/site/remote-tv-1920.webp" srcset="assets/site/remote-tv-960.webp 960w, assets/site/remote-tv-1920.webp 1920w" sizes="(max-width: 1000px) 60vw, 640px" width="1920" height="1080" alt="The Remote dashboard on a TV, showing a list of best buys beside the details of one item" loading="lazy"></div>
+        <div class="dv dv-desktop" style="left:0;top:35.53%;width:37.29%;--d:.2s"><img src="assets/site/remote-desktop-1440.webp" srcset="assets/site/remote-desktop-720.webp 720w, assets/site/remote-desktop-1440.webp 1440w" sizes="(max-width: 1000px) 40vw, 440px" width="1440" height="900" alt="The Remote dashboard on a desktop screen, showing the profit ledger with a monthly goal and week by week results" loading="lazy"></div>
+        <div class="dv dv-tablet" style="left:76.27%;top:38.16%;width:23.73%;--d:.3s"><img src="assets/site/remote-tablet-820.webp" srcset="assets/site/remote-tablet-410.webp 410w, assets/site/remote-tablet-820.webp 820w" sizes="(max-width: 1000px) 24vw, 280px" width="820" height="1180" alt="The Remote dashboard on a tablet, showing the market list with BUY signals" loading="lazy"></div>
+        <div class="dv dv-phone" style="left:42.8%;top:52.63%;width:12.71%;--d:.4s"><img src="assets/site/remote-phone-780.webp" srcset="assets/site/remote-phone-390.webp 390w, assets/site/remote-phone-780.webp 780w" sizes="(max-width: 1000px) 13vw, 150px" width="780" height="1688" alt="The Remote dashboard on a phone in the dark theme, showing the monthly goal and the best buys" loading="lazy"></div>
+        <div class="dv dv-phone" style="left:56.36%;top:56.58%;width:12.71%;--d:.5s"><img src="assets/site/remote-phone-light-780.webp" srcset="assets/site/remote-phone-light-390.webp 390w, assets/site/remote-phone-light-780.webp 780w" sizes="(max-width: 1000px) 13vw, 150px" width="780" height="1688" alt="The Remote dashboard on a phone in the light theme" loading="lazy"></div>
+      </div>
+      <ul class="dv-legend reveal" aria-label="Screen sizes">
+        <li><b>Phone</b><span>Your goal and best buys, one thumb away.</span></li>
+        <li><b>Tablet</b><span>A slim side rail and two columns.</span></li>
+        <li><b>Desktop</b><span>A full sidebar with details alongside.</span></li>
+        <li><b>TV</b><span>Big and readable from across the room.</span></li>
+      </ul>
     </div>
   </section>
 
