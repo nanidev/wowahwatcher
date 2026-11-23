@@ -95,6 +95,14 @@ After each scan you get a short, readable briefing: what to buy now, why, and wh
 <br><sub>Briefing: a written summary of the latest scan, in the style you pick, with your own notes to steer it.</sub>
 </div>
 
+### Keeps your private details out of sight
+Turn on **Streamer mode** with one switch and everything personal is blurred: character and account names, folders on your PC, your gold, the items you hold and your Discord webhook. Names in drop-down lists are replaced by Character 1, 2 and so on. Market prices, signals and the watchlist stay visible, so you can stream or share a screenshot safely. Under Settings you can also choose **Show my items**, which keeps names, folders and secrets blurred but shows your item lists. It is free for everyone.
+
+<div align="center">
+<img src="assets/screens/streamer.png" alt="The My items page in streamer mode with names and gold blurred" width="92%">
+<br><sub>Streamer mode: hide names, folders and gold, and choose whether your items stay visible.</sub>
+</div>
+
 ---
 
 ## Supporter features
@@ -106,7 +114,6 @@ The whole app is free. Supporters (a coffee on Ko-fi unlocks it) can sign in onc
 - **Best days:** a weekday heat map of when prices are usually lowest and highest, for the whole market, your items and your watchlist.
 - **Signal scorecard:** replays the Buy signal over your own history to show how often it was right.
 - **Remote dashboard:** a read-only dashboard for your home network that adapts to phones, tablets and PCs.
-- **Streamer mode:** one switch that blurs names, folders, gold and items so you can stream or share a screenshot.
 
 Signing in is optional and only confirms that you are a supporter. Everything that was free stays free.
 
@@ -133,11 +140,6 @@ Signing in is optional and only confirms that you are a supporter. Everything th
 <div align="center">
 <img src="assets/screens/scorecard.png" alt="The Signal scorecard showing how past BUY signals played out" width="92%">
 <br><sub>Signal scorecard: how often the Buy signal really paid off, replayed over your own history.</sub>
-</div>
-
-<div align="center">
-<img src="assets/screens/streamer.png" alt="The My items page in streamer mode with names and gold blurred" width="92%">
-<br><sub>Streamer mode: hide names, folders and gold, and choose whether your items stay visible.</sub>
 </div>
 
 <sub>All screenshots use made-up characters and prices.</sub>

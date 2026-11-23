@@ -74,7 +74,7 @@
         "Live deal alerts with optional Discord webhook",
         "Optional local AI briefing through Ollama, in four writing styles, with live progress and a Stop button",
         "Every game version, with a market switcher and separate history per market",
-        "Optional supporter extras: trade advisor, profit ledger, best days, signal scorecard, remote dashboard and streamer mode",
+        "Optional supporter extras: trade advisor, profit ledger, best days, signal scorecard, and remote dashboard",
         "100% local, no accounts, no telemetry"
       ]
     },
@@ -193,7 +193,7 @@
     <div class="wrap">
       <div class="center reveal">
         <span class="eyebrow">Product tour</span>
-        <h2 class="h2" id="show-title">Nine pages. One clear answer.</h2>
+        <h2 class="h2" id="show-title">Ten views. One clear answer.</h2>
         <p class="lead">Real screenshots from the real app. Pick a page and take a look.</p>
       </div>
       <div class="show reveal" id="tour">
@@ -207,6 +207,7 @@
           <button class="tab" role="tab" id="t6" aria-controls="viewer" aria-selected="false" tabindex="-1"><strong>Item page</strong><p>The price history chart, the fair price and the plain-language reason behind every signal.</p></button>
           <button class="tab" role="tab" id="t7" aria-controls="viewer" aria-selected="false" tabindex="-1"><strong>Briefing</strong><p>A short readable summary of the latest scan. Pick a writing style and add your own notes to steer the optional local AI.</p></button>
           <button class="tab" role="tab" id="t8" aria-controls="viewer" aria-selected="false" tabindex="-1"><strong>My items</strong><p>Everything your characters carry, keep in the bank and have listed, valued at market prices and tagged with the same signals.</p></button>
+          <button class="tab" role="tab" id="t9" aria-controls="viewer" aria-selected="false" tabindex="-1"><strong>Streamer mode</strong><p>One click blurs names, folders and gold, and you choose whether your items stay visible, so you can stream or share a screenshot safely.</p></button>
         </div>
         <div class="viewer" id="viewer" role="tabpanel" aria-live="polite">
           <div class="device">
@@ -221,11 +222,12 @@
               <img src="assets/site/item-1600.webp" srcset="assets/site/item-800.webp 800w, assets/site/item-1600.webp 1600w" sizes="(max-width: 1000px) 100vw, 760px" width="1600" height="1000" alt="Item page with price history chart and the reason for its signal" loading="lazy">
               <img src="assets/site/briefing-1600.webp" srcset="assets/site/briefing-800.webp 800w, assets/site/briefing-1600.webp 1600w" sizes="(max-width: 1000px) 100vw, 760px" width="1600" height="1000" alt="Briefing page with a summary style menu, notes for the AI and the latest written briefing" loading="lazy">
               <img src="assets/site/myitems-1600.webp" srcset="assets/site/myitems-800.webp 800w, assets/site/myitems-1600.webp 1600w" sizes="(max-width: 1000px) 100vw, 760px" width="1600" height="1000" alt="My items page listing what each character carries, keeps in the bank and has on the auction house, with market signals and worth" loading="lazy">
+              <img src="assets/site/streamer-1600.webp" srcset="assets/site/streamer-800.webp 800w, assets/site/streamer-1600.webp 1600w" sizes="(max-width: 1000px) 100vw, 760px" width="1600" height="1000" alt="My items page in streamer mode with names and gold blurred while the items stay visible" loading="lazy">
 
             </div>
           </div>
           <div class="cap" id="cap">
-            <span class="cap-no" id="cap-no">01 / 09</span>
+            <span class="cap-no" id="cap-no">01 / 10</span>
             <h3 class="cap-title" id="cap-title">Dashboard</h3>
             <p class="cap-text" id="cap-text">Your best BUY signals, your most profitable craft and a written briefing, all on one calm page.</p>
           </div>
@@ -332,7 +334,7 @@
         <article class="card span6 reveal">
           <span class="tag">Supporters</span>
           <h3>A few extras for supporters</h3>
-          <p>The whole app is free. Supporters can sign in once on the Supporter page to unlock the Trade advisor, the Profit ledger with goals, Best days (a weekday heat map of the cheapest and dearest days), the Signal scorecard, a read-only Remote dashboard for phones, tablets and PCs on your home network, and a Streamer mode that blurs names, folders, gold and items. Signing in is optional and only confirms that you are a supporter.</p>
+          <p>The whole app is free. Supporters can sign in once on the Supporter page to unlock the Trade advisor, the Profit ledger with goals, Best days (a weekday heat map of the cheapest and dearest days), the Signal scorecard, a read-only Remote dashboard for phones, tablets and PCs on your home network. Signing in is optional and only confirms that you are a supporter.</p>
         </article>
 
         <article class="card span6 reveal">
@@ -358,7 +360,6 @@
           <button class="tab" role="tab" id="s1" aria-controls="viewer2" aria-selected="false" tabindex="-1"><strong>Profit ledger</strong><p>What you really sold and bought: a monthly goal with a pace line, a bar for every week and the true profit per item.</p></button>
           <button class="tab" role="tab" id="s2" aria-controls="viewer2" aria-selected="false" tabindex="-1"><strong>Trade advisor</strong><p>A plan for today built from what you hold: what to sell now, what to buy and which crafts still pay after the cut.</p></button>
           <button class="tab" role="tab" id="s3" aria-controls="viewer2" aria-selected="false" tabindex="-1"><strong>Signal scorecard</strong><p>An honest report card. See how past BUY signals really played out, with the win rate and the average gain.</p></button>
-          <button class="tab" role="tab" id="s4" aria-controls="viewer2" aria-selected="false" tabindex="-1"><strong>Streamer mode</strong><p>One click hides names, folders and gold. Choose whether your items stay visible, so you can stream or share a screenshot safely.</p></button>
         </div>
         <div class="viewer" id="viewer2" role="tabpanel" aria-live="polite">
           <div class="device">
@@ -368,11 +369,10 @@
               <img src="assets/site/ledger-1600.webp" srcset="assets/site/ledger-800.webp 800w, assets/site/ledger-1600.webp 1600w" sizes="(max-width: 1000px) 100vw, 760px" width="1600" height="1000" alt="Profit ledger with a monthly goal, week by week results and profit per item" loading="lazy">
               <img src="assets/site/advisor-1600.webp" srcset="assets/site/advisor-800.webp 800w, assets/site/advisor-1600.webp 1600w" sizes="(max-width: 1000px) 100vw, 760px" width="1600" height="1000" alt="Trade advisor with items to sell now, items to buy and profitable crafts" loading="lazy">
               <img src="assets/site/scorecard-1600.webp" srcset="assets/site/scorecard-800.webp 800w, assets/site/scorecard-1600.webp 1600w" sizes="(max-width: 1000px) 100vw, 760px" width="1600" height="1000" alt="Signal scorecard showing how past BUY signals played out" loading="lazy">
-              <img src="assets/site/streamer-1600.webp" srcset="assets/site/streamer-800.webp 800w, assets/site/streamer-1600.webp 1600w" sizes="(max-width: 1000px) 100vw, 760px" width="1600" height="1000" alt="My items page in streamer mode with names and gold blurred while the items stay visible" loading="lazy">
             </div>
           </div>
           <div class="cap">
-            <span class="cap-no">01 / 05</span>
+            <span class="cap-no">01 / 04</span>
             <h3 class="cap-title">Best days</h3>
             <p class="cap-text">A weekday heat map of when each item is cheapest and dearest, with your watchlist on top, so you buy and list on the right day.</p>
           </div>
