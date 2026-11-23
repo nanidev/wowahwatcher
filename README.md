@@ -97,11 +97,28 @@ After each scan you get a short, readable briefing: what to buy now, why, and wh
 
 ---
 
+## Supporter features
+
+The whole app is free. Supporters (a coffee on Ko-fi unlocks it) can sign in once on the app's Supporter page to unlock a few extras:
+
+- **Trade advisor:** turns your bags, bank and mail and the market into a plan of what to sell, buy, craft and keep.
+- **Profit ledger and goals:** what you earned over 7 days, 30 days and in total, per item and week by week, with a weekly or monthly gold goal.
+- **Best days:** a weekday heat map of when prices are usually lowest and highest, for the whole market, your items and your watchlist.
+- **Signal scorecard:** replays the Buy signal over your own history to show how often it was right.
+- **Remote dashboard:** a read-only dashboard for your home network that adapts to phones, tablets and PCs.
+- **Streamer mode:** one switch that blurs names, folders, gold and items so you can stream or share a screenshot.
+
+Signing in is optional and only confirms that you are a supporter. Everything that was free stays free.
+
+---
+
 ## Everything else in the box
 
 | | |
 |---|---|
 | **Watchlist** | Follow the items you care about. Suggestions are built from your own market history, never from a built-in list. |
+| **Every game version** | Retail, WoW: Forever, Burning Crusade Classic Anniversary, Mists of Pandaria Classic and Classic Era. A market switcher in the sidebar picks the market, and each market keeps its own history. |
+| **Backup and restore** | One zip with your settings, lists and price history, and a guided way to put it back. |
 | **Saved Market views** | Save a set of filters under a name and reopen it with one click. |
 | **CSV download** | Take the whole market table into a spreadsheet. |
 | **Honest freshness labels** | The age comes from Auctionator's own scan time. Fresh (under an hour), aging, stale and very old data are labelled, and old prices never pose as a deal. |
@@ -116,7 +133,7 @@ After each scan you get a short, readable briefing: what to buy now, why, and wh
 ## Your data never leaves your PC
 
 - Everything is calculated **locally**. There are no accounts, no telemetry, no analytics and no third-party scripts.
-- The app only talks to **your own local Ollama**, to a **Discord webhook you add yourself**, and to **GitHub** to ask for the newest release number so it can offer updates (you can turn that off in Settings). Nothing about you or your data is sent. Updates are never installed without you pressing **Update now**.
+- The app only talks to **your own local Ollama**, to a **Discord webhook you add yourself**, and to **GitHub** to ask for the newest release number so it can offer updates (you can turn that off in Settings). If you choose to sign in as a supporter, it also contacts the project's supporter sign-in, only to confirm that you are a supporter. Nothing about you or your data is sent. Updates are never installed without you pressing **Update now**.
 - Your WoW account name is hidden in the sidebar by default, so you can share a screenshot or stream without leaking your Battle.net number.
 
 ---
