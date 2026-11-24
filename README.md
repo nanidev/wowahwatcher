@@ -80,7 +80,7 @@ A live **Alerts** feed announces each new BUY deal once, with a badge in the sid
 </div>
 
 ### Explains every price
-Each item page charts its price history and lists the notable days. Every figure has a plain definition: the **Typical range** is the middle 80% of daily prices, so one spike cannot distort it; **Cheaper than** is the share of days in the window that were dearer than today's price; and the **sell target** stays close to the item's usual daily low, never more than 25% above it. The same definitions are in the app's Help.
+Each item page charts its price history and lists the notable days. Every figure has a plain definition: the **Typical range** is the usual span of daily prices, so one spike cannot distort it; **Cheaper than** shows how today's price compares with recent days; and the **sell target** stays close to the item's usual daily low. The same definitions are in the app's Help.
 
 <div align="center">
 <img src="assets/screens/item.png" alt="An item page with price history chart and the reason for its signal" width="92%">
