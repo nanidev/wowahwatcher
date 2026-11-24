@@ -2,11 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
 	<loc>https://wowahwatcher.com/</loc>
-	<lastmod>2026-11-21</lastmod>
+	<lastmod>2026-11-24</lastmod>
 	<changefreq>monthly</changefreq>
 	<priority>1.0</priority>
 	<image:image><image:loc>https://wowahwatcher.com/assets/screens/dashboard.png</image:loc><image:title>WoW AH Watcher dashboard</image:title></image:image>
 	<image:image><image:loc>https://wowahwatcher.com/assets/screens/crafting.png</image:loc><image:title>WoW AH Watcher crafting profit</image:title></image:image>
+	<image:image><image:loc>https://wowahwatcher.com/assets/screens/arbitrage.png</image:loc><image:title>WoW AH Watcher AH arbitrage</image:title></image:image>
 	<image:image><image:loc>https://wowahwatcher.com/assets/screens/market.png</image:loc><image:title>WoW AH Watcher market page</image:title></image:image>
 	<image:image><image:loc>https://wowahwatcher.com/assets/screens/ledger.png</image:loc><image:title>WoW AH Watcher profit ledger</image:title></image:image>
 	<image:image><image:loc>https://wowahwatcher.com/assets/screens/bestdays.png</image:loc><image:title>WoW AH Watcher best days heat map</image:title></image:image>

@@ -18,7 +18,7 @@
 
 ## Stop guessing at the Auction House
 
-Auctionator already records every price you scan. **WoW AH Watcher turns that pile of numbers into decisions.** It reads your own scans, compares today's price with what an item *really* sells for, and tells you in plain language what is worth buying, what is worth crafting, and what to leave alone. It also tells you honestly when its information is old.
+**WoW AH Watcher scans the Auction House for you and turns that pile of prices into decisions.** It compares today's price with what an item *really* sells for, shows what buying a bigger batch would cost, and tells you in plain language what is worth buying, what is worth crafting, and what to leave alone. It also tells you honestly when its information is old.
 
 It runs quietly on your own PC, opens in your browser, and stays out of the game. Nothing is uploaded, ever.
 
@@ -31,6 +31,19 @@ It runs quietly on your own PC, opens in your browser, and stays out of the game
 
 ## What it does for you
 
+### Scans the Auction House for you
+A small helper addon adds a **Scan** button to the Auction House window. Press it and the whole market is gathered, with the progress shown on the button. Leave automatic scanning on and it scans every time you open the Auction House (right-click the button to turn that off or on). Each market keeps its own short history, and the addon reminds you in chat when your last scan has become old. No other addon is needed.
+
+### Looks at the price levels, not just the cheapest price
+The cheapest listing hides how fast the price climbs. The **Depth scan** button looks at the price levels behind it, so you see what buying 5, 20 or 100 really costs.
+
+- After a scan it carries on by itself, starting with your own items. **Right-click** the button to choose **Off, Low, Medium or High**.
+- **Left-click** it for a full depth scan of the whole market. It warns you first, shows the progress and the time left, and can be stopped with a click and continued later.
+- **Shift-click** starts the scan of your chosen level right away. **Ctrl-click** starts the full depth scan over from the beginning.
+- If the Auction House goes quiet it waits, carries on more slowly and asks again for what it missed.
+
+Price levels are used where they matter: the item page shows what buying 1, 5, 20 or 100 costs, the shopping list prices the materials for the whole list together, and AH arbitrage shows the average price of a small batch. Levels that are old or do not agree with the scan are left out, and the item page says so. The top bar shows how many items the last scan found, how many have usable price levels and how recent the newest are.
+
 ### Finds the real bargains
 Every item from your latest scan gets a signal: **BUY**, **SELL-HOLD** or **WATCH**. A BUY means the price is well below what the item usually sells for, it still makes a profit after the Auction House cut, and there is enough history and supply to trust it. Items that are **Thin** (too few listings), **Old price** (the item's price is old), **Volatile** (prices swing too much) or **Falling** (the last few days sit well below the days before) are never marked BUY, so a one-listing fluke or a price that is still dropping never shows up as a "deal".
 
@@ -40,7 +53,7 @@ Every item from your latest scan gets a signal: **BUY**, **SELL-HOLD** or **WATC
 </div>
 
 ### Shows the true profit of every craft
-Crafting is costed from the recipes **your characters actually know**. Every material is priced at the cheaper of its Auction House price and its vendor price, the 5% Auction House cut is taken off, and you see the net profit and margin. A vendor price only counts when the vendor has **unlimited stock**, so limited-stock items are never treated as always buyable. Reputation discounts are already in the price Auctionator saved. Vendor-bought materials carry a **Vendor** label, and crafts your characters cannot make are flagged. If a price is missing, the craft says **"price unknown"**. It never invents a total. Search by name, or press **Show all**, to find any priced craft, not just the top few.
+Crafting is costed from the recipes **your characters actually know**. Every material is priced at the cheaper of its Auction House price and its vendor price, the 5% Auction House cut is taken off, and you see the net profit and margin. A vendor price only counts when the vendor has **unlimited stock**, so limited-stock items are never treated as always buyable. Reputation discounts are already in the vendor price. Vendor-bought materials carry a **Vendor** label, and crafts your characters cannot make are flagged. If a price is missing, the craft says **"price unknown"**. It never invents a total. Search by name, or press **Show all**, to find any priced craft, not just the top few.
 
 <div align="center">
 <img src="assets/screens/crafting.png" alt="The Crafting page showing ingredients, craft cost, net profit and margin" width="92%">
@@ -48,15 +61,23 @@ Crafting is costed from the recipes **your characters actually know**. Every mat
 </div>
 
 ### Spots flips between the Auction House and vendors
-The **Vendor flips** page lists items that are worth more somewhere else than where they are sold, in both directions: items you can **buy on the Auction House for less than a vendor pays**, and items a **vendor sells for less than they fetch on the Auction House** after the 5% cut. Every price comes from your own scan or your own game, never a guess. Auctionator does not save how many items are listed or whether a vendor has limited stock, so the page tells you when stock is not confirmed, leaves out old prices and shows how many it skipped. Check the listings before you buy.
+The **Vendor flips** page lists items that are worth more somewhere else than where they are sold, in both directions: items you can **buy on the Auction House for less than a vendor pays**, and items a **vendor sells for less than they fetch on the Auction House** after the 5% cut. Every price comes from your own scan or your own game, never a guess. The page tells you when a vendor's stock is not confirmed, leaves out old prices and shows how many it skipped. Check the listings before you buy.
 
 <div align="center">
 <img src="assets/screens/vendorflips.png" alt="The Vendor flips page with trades between the Auction House and vendors" width="92%">
 <br><sub>Vendor flips: both directions, with stock and price age flagged.</sub>
 </div>
 
+### Compares the Auction Houses
+**AH arbitrage** compares the faction Auction Houses with the neutral one and lists items that cost clearly less at one than they sell for at the other, after the cut. Each side shows how old its scan is, and when buying a few costs more than the cheapest listing, the average price of that batch is shown and the profit uses it.
+
+<div align="center">
+<img src="assets/screens/arbitrage.png" alt="The AH arbitrage page listing items that cost less at one Auction House than they sell for at the other" width="92%">
+<br><sub>AH arbitrage: the gaps between the Auction Houses, with the average price of a small batch.</sub>
+</div>
+
 ### Plans your whole shopping trip
-Add the crafts you plan to make and how many of each. You get **one combined "what to buy" list**, and a materials tree that compares buying a part with crafting it yourself, with the savings spelled out.
+Add the crafts you plan to make and how many of each. You get **one combined "what to buy" list**, priced for the whole list together using the price levels the addon saved, and a materials tree that compares buying a part with crafting it yourself, with the savings spelled out.
 
 <div align="center">
 <img src="assets/screens/shopping.png" alt="The shopping list with a combined materials list and a buy-versus-craft tree" width="92%">
@@ -80,11 +101,11 @@ A live **Alerts** feed announces each new BUY deal once, with a badge in the sid
 </div>
 
 ### Explains every price
-Each item page charts its price history and lists the notable days. Every figure has a plain definition: the **Typical range** is the usual span of daily prices, so one spike cannot distort it; **Cheaper than** shows how today's price compares with recent days; and the **sell target** stays close to the item's usual daily low. The same definitions are in the app's Help.
+Each item page charts its price history, lists the notable days and shows **what is listed**: what buying 1, 5, 20 or 100 would cost, a price wall and a buyout option for the number of units you enter. Every figure has a plain definition: the **Typical range** is the usual span of daily prices, so one spike cannot distort it; **Cheaper than** shows how today's price compares with recent days; and the **sell target** stays close to the item's usual daily low. The same definitions are in the app's Help.
 
 <div align="center">
-<img src="assets/screens/item.png" alt="An item page with price history chart and the reason for its signal" width="92%">
-<br><sub>Item page: the chart, the fair price, and the reason behind the signal.</sub>
+<img src="assets/screens/item.png" alt="An item page with price history chart, the price levels of what is listed and the reason for its signal" width="92%">
+<br><sub>Item page: the chart, what buying really costs, the fair price, and the reason behind the signal.</sub>
 </div>
 
 ### Writes you a briefing
@@ -155,11 +176,11 @@ Signing in is optional and only confirms that you are a supporter. Everything th
 | **Backup and restore** | One zip with your settings, lists and price history, and a guided way to put it back. |
 | **Saved Market views** | Save a set of filters under a name and reopen it with one click. |
 | **CSV download** | Take the whole market table into a spreadsheet. |
-| **Honest freshness labels** | The age comes from Auctionator's own scan time. Fresh (under an hour), aging, stale and very old data are labelled, and old prices never pose as a deal. |
-| **Guided setup** | Finds your WoW account, helps you install the two small helper addons (item names, vendor prices and recipes), and tells you exactly what is missing. |
+| **Honest freshness labels** | The age comes from the time of the scan itself. Fresh (under an hour), aging, stale and very old data are labelled, and old prices never pose as a deal. |
+| **Guided setup** | Finds your WoW account, helps you install the two small helper addons (one scans the market, one saves item names, categories, vendor prices and recipes), and tells you exactly what is missing. |
 | **Gold, silver and copper** | Every price uses the in-game coin colours, everywhere in the app. |
 | **Runs like a normal Windows app** | No console window. It opens in your browser, and a tray icon lets you open, restart or quit it, and start it with Windows. |
-| **Item names for every item** | The Names helper addon records real item names and what vendors pay, so prices are not shown as bare numbers. |
+| **Item names and categories** | The Names helper addon records real item names, battle pet names, item categories and what vendors pay, so prices are not shown as bare numbers and the Market can be filtered by category. |
 | **Built-in Help** | A full guide to every page, the signals, the glossary and the in-game commands. |
 
 ---
@@ -177,15 +198,15 @@ Signing in is optional and only confirms that you are a supporter. Everything th
 | | |
 |---|---|
 | **Windows 10 or 11** | 64-bit. No administrator rights needed. |
-| **World of Warcraft** | Installed, and logged in at least once. |
-| **[Auctionator](https://www.curseforge.com/wow/addons/auctionator)** | The Forever version, enabled on the character you play, with at least one Auction House scan. It is a separate addon and is not included. |
+| **World of Warcraft** | Installed, and logged in at least once. The guided setup adds the two small helper addons. |
 | **[Ollama](https://ollama.com)** *(optional)* | Only for the AI-written briefing. Everything else works without it. |
+| **Auctionator** *(optional)* | Not needed. Prices it saved earlier can be imported. |
 
 ## Get started in a few minutes
 
 1. **[Download the latest release](https://github.com/nanidev/wowahwatcher/releases/latest)** and run `WoWAHWatcher-Setup-<version>.exe`. (Prefer no installer? Download the `.zip`, unzip it anywhere and run `WoWAHWatcher.exe`.)
 2. The dashboard **opens in your browser** by itself. Click **Set up your WoW account** and follow the guided setup.
-3. In game: open the Auction House and let Auctionator scan, open your profession windows once, then log out or type `/reload`. The app notices within seconds and fills in.
+3. In game: open the Auction House and press **Scan** (or let it scan by itself), open your profession windows once, then log out or type `/reload`. The app notices within seconds and fills in.
 
 > **Windows SmartScreen:** the first build is not code-signed yet, so Windows may say *"Windows protected your PC"*. Click **More info**, then **Run anyway**. Every download comes with a `.sha256` file so you can check it is untouched.
 
